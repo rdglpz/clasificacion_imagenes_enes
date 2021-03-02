@@ -34,7 +34,6 @@ Ejemplos de problemas que son fáciles para los humanos pero dificiles para las 
 * Reconocimiento de objetos.
 * Qué otros problemas los humanos pueden resolver fácilmente? 
   * La Justicia
-  * 
 
 
 
@@ -102,7 +101,7 @@ tal que la suma de los errores $\sum ( f(\mathbf{x}_i, \mathbf{w}) - y_i)$ sea l
 
 
 
-**Ecuación de la recta*
+**Ecuación de la recta**
 
 
 
@@ -387,7 +386,7 @@ Ejemplos
   
   Redes neuronales convolucionales (Supervisado)
   
-  $k$-vecinos cercanos
+  $k$-vecinos cercanos (Supervisado)
   
   PCA (no-supervisado)
   
@@ -457,9 +456,11 @@ Los puntos negros son los datos reales.
 
 Los rojos son salidas estimadas $p(y=1|\mathbf{x}_i,\hat{\mathbf{w}})$
 
-Si el umbral es mayor a 0.5 entonces la salida estimada será $\hat{y}(x) = p(y=1|\mathbf{x})>0.5 = 1$  
+Si el umbral es mayor a 0.5 entonces la salida estimada será $\hat{y}(x) = p(y=1|\mathbf{x})>0.5 = 1$ 
 
-<img src="figures/Screen Shot 2021-02-23 at 21.47.42.png" alt="Screen Shot 2021-02-23 at 21.47.42" style="zoom: 50%;" />![Screen Shot 2021-02-23 at 21.01.09](figures/Screen Shot 2021-02-23 at 21.01.09.png)
+ ![Screen Shot 2021-02-23 at 21.47.42](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-02-23 at 21.47.42.png)
+
+
 
 
 
@@ -479,9 +480,9 @@ $I(e)$ es la funcion indicadora que devuelve $1$ si $e$ es verdadero y $0$ en ca
 
 con $K=1$ se genera un diagrama de Voronoi. 
 
-<img src="figures/Screen Shot 2021-02-23 at 21.47.42.png" alt="Screen Shot 2021-02-23 at 21.47.42" style="zoom: 50%;" />![Screen Shot 2021-02-23 at 21.01.09](figures/Screen Shot 2021-02-23 at 21.01.09.png)
+![Screen Shot 2021-02-23 at 21.01.09](figures/Screen Shot 2021-02-23 at 21.01.09.png)
 
-<img src="figures/Screen Shot 2021-02-23 at 20.42.30.png" alt="Screen Shot 2021-02-23 at 20.42.30" style="zoom:50%;" />![Screen Shot 2021-02-23 at 20.42.46](figures/Screen Shot 2021-02-23 at 20.42.46.png)
+<img src="figures/Screen Shot 2021-02-23 at 20.42.30.png" alt="Screen Shot 2021-02-23 at 20.42.30" style="zoom:25%;" />
 
 1) Datos sintéticos de 3 clases
 
@@ -497,13 +498,15 @@ con $K=1$ se genera un diagrama de Voronoi.
 
 Se refiere a la incapacidad o el mal desempeño de los modelos de aprendizaje automático de poder escalar con los datos debido a la alta dimensionalidad del problema. 
 
-<img src="figures/Screen Shot 2021-02-23 at 20.42.30.png" alt="Screen Shot 2021-02-23 at 20.42.30" style="zoom:25%;" />![Screen Shot 2021-02-23 at 20.42.46](figures/Screen Shot 2021-02-23 at 20.42.46.png)
+
+
+![Screen Shot 2021-02-23 at 20.42.46](figures/Screen Shot 2021-02-23 at 20.42.46.png)
 
 En el caso de vecinos cercanos, la distancia para obtener una vecindad mínima crece exponencialmente con el número de dimensiones. 
 
 En optimización el espacio de búsqueda crece exponencialmente con el número de dimensiones del espacio.
 
-### Etapas del proceso de clasificación
+## Etapas del proceso de clasificación
 
 0. Definir el problema de clasificación (o regresión)
 1. Colectar la mayor cantidad de datos posible con la mejor calidad.  Ordenarlos en una tabla ( como .csv)
@@ -555,32 +558,51 @@ Este error puede ser aproximado utilizando un conjunto de datos de prueba.
 
 ![Screen Shot 2021-02-23 at 20.44.22](figures/Screen Shot 2021-02-23 at 20.44.22.png)
 
+Tarea 3 : Variaciones de validación cruzada
+
 ### Sobre ajuste
 
 Es un problema que sufren principalmente los modelos pertenecientes a aprendizaje automático. Un ajuste *perfecto* sobre el conjunto de entrenamiento impide desempeñarse de manera adecuada con cualquier otro dato que no haya sido contemplado en su entrenamiento. Esto se detecta cuando tenemos un error de ajuste muy bajo en el conjunto de prueba y un error muy alto en el conjunto de entrenamiento.
 
+
+
+
+
 ### No Free Lunch Theorem
 
-Todos los modelos estan mal pero algunos son útiles. George Box (Box and Draper 1987)
-
-Aunque probemos nuestro modelo y lo validemos con los métodos adecuados para obtener cierta capacidad de generalización en cierto dominio de aplicación, este se desempeñara pobre en otros dominios diferentes, por lo que este teorema se refiere a la no existencia de modelos Universales.
-
-### Bibliografía
-
-1. https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
 
 
+Se refiere a la no existencia de modelos Universales.
 
-## Interpretación Geométrica de la Clasificación
+*Todos los modelos estan mal pero algunos son útiles*. George Box (Box and Draper 1987)
 
-## Clasificación No supervisada
+Aunque probemos nuestro modelo y lo validemos con los métodos adecuados para obtener cierta capacidad de generalización en cierto dominio de aplicación, este se desempeñara pobre en otros dominios diferentes.
 
+
+
+## Unidad 2 Interpretación Geométrica de la Clasificación
+
+### Definición de clases
+
+## Unidad 3 Clasificación No supervisada
+
+### Definición y formulación matemática
 Definición
 
 
 
 
+## Bibliografía
 
+1. https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
+
+https://www.um.es/geograf/sigmur/temariohtml/node74_mn.html
+
+https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
+
+https://en.wikipedia.org/wiki/Cross-validation_(statistics)#/media/File:K-fold_cross_validation_EN.svg
+
+https://quimicayalgomas.com/wp-content/uploads/2015/03/logaritmos-propiedades.png
 
 
 
