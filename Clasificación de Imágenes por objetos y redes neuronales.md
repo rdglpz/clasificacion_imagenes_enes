@@ -506,11 +506,14 @@ En el caso de vecinos cercanos, la distancia para obtener una vecindad mínima c
 
 En optimización el espacio de búsqueda crece exponencialmente con el número de dimensiones del espacio.
 
-## Etapas del proceso de clasificación
+## Etapas del proceso de clasificación (miercoles 3 marzo)
 
-0. Definir el problema de clasificación (o regresión)
+0. Definir el problema de clasificación (o regresión).
+   1. Clasificar Flores
+   2. Clasificación de Hongos (Comestibles o no comestibles)
+   3. Diagnosticar Cancer. 
 1. Colectar la mayor cantidad de datos posible con la mejor calidad.  Ordenarlos en una tabla ( como .csv)
-2. Preparar los datos
+2. Preparar los datos.
    1. Aleatorizar los datos para que el orden entre ellos no afecte en el entrenamiento del modelo.
    2. Hacer un análisis exploratorio de los datos para detectar características generales de las correlaciones, variables de interés, balance de clases, formas generales de las distribuciones.
    3. Reducir la dimensionalidad de ser posible.
@@ -518,39 +521,45 @@ En optimización el espacio de búsqueda crece exponencialmente con el número d
 3. Entrenar y probar varios modelos bajo las mismas condiciones.
 4. **Seleccionar el modelo**
 5. En caso de no tener resultados satisfactorios, ajustar parámetros o incluir nuevos modelos.
-6. Predicción, clasificación o inferencia.
-7. Interpretar el modelo
-
-
+6. Predicción, clasificación o inferencia (Se puede hacer sobre un conjunto de datos de validación).
+7. Interpretar el modelo.
 
 
 
 ### **Selección de modelo**
 
-Cuando tenemos una variedad de modelos de diferentes tipos, existe la necesitad de seleccionar el mejor modelo.
+Cuando tenemos una variedad de modelos, existe la necesidad de seleccionar el mejor.
 
-Para esto se requiere calcular el error generalizado, el cual es el error esperado de la tasa de clasificaciones incorrectas de los datos futuros.
+Para esto se requiere calcular un **error generalizado**, el cual es el error esperado de la tasa de clasificaciones incorrectas de los datos futuros o no observados.
 
-Para esto es necesario organizar los datos en 1 o mas particiones de conjunto de entrenamiento, y prueba (Fig 1.21). 
+Para esto es necesario organizar los datos en 1 o mas particiones, donde cada particion estará compuesto de un conjunto de datos de entrenamiento, y el restante de prueba (Fig 1.21). 
 
-Una manera de validar el model es el siguiente:
+Una manera de validar el modelo es el siguiente:
 
 0. Seleccionar el modelo de clasificación
 
-1.  Particionar los datos en dos conjuntos (k-fold validation): 
+1. Particionar los datos en al menos dos conjuntos para ajustar o entrenar un modelo: 
 
    1. Entrenamiento 
    2. Prueba
 
-2. Para una configuración de la partición: entrenar un modelo con el conjunto de entrenamiento y probar con con el conjunto de prueba.
+2. Para la partición: entrenar un modelo con el conjunto de entrenamiento y probar su ajuste con con el conjunto de Prueba.
 
-3. Medir el error generalizado con el conjunto de prueba.
+3. Medir el error primero con el conjunto de entrenamiento y prueba. El error se puede expresar como:
 
-4. (opcional) Repetir el procedimiento varias veces seleccionando una configuración diferente.
+   $$err(f,D) = \frac{1}{N} \sum_{i=1}^N I (f(\mathbf{x}_{i}) \neq y_i)$$
+
+4. (Opcional pero recomendado) Repetir el procedimiento varias veces seleccionando  los conjuntos de manera diferente.
 
    
 
-En cada partición, el conjunto de entrenmiento es utilizado para ajustar parametro del modelo, y el conjunto de prueba para calcular el error y evitar seleccionar un modelo **sobre ajustado**.
+El error generalizado se expresa como el error promedio de un conjunto de datos de varias particiones diferentes dado por.
+
+$$\textit{error general} = \frac{1}{M} \sum^M_{i=1} err_i(f,D)$$
+
+Donde *M* es el número de particiones diferentes.
+
+En cada partición, el conjunto de entrenmiento es utilizado para ajustar parámetro del modelo, y el conjunto de prueba para calcular el error y evitar seleccionar un modelo **sobre ajustado**.
 
 Este error puede ser aproximado utilizando un conjunto de datos de prueba. 
 
@@ -558,19 +567,15 @@ Este error puede ser aproximado utilizando un conjunto de datos de prueba.
 
 ![Screen Shot 2021-02-23 at 20.44.22](figures/Screen Shot 2021-02-23 at 20.44.22.png)
 
-Tarea 3 : Variaciones de validación cruzada
+
+
+Adicionalmente es posible reservar un 3er conjunto exclusivo llamado **conjunto de validación**. El cual es utilizado para corroborar la generalización del modelo. Los Datos de este conjunto de validación pueden mantenerse invariantes.
 
 ### Sobre ajuste
 
-Es un problema que sufren principalmente los modelos pertenecientes a aprendizaje automático. Un ajuste *perfecto* sobre el conjunto de entrenamiento impide desempeñarse de manera adecuada con cualquier otro dato que no haya sido contemplado en su entrenamiento. Esto se detecta cuando tenemos un error de ajuste muy bajo en el conjunto de prueba y un error muy alto en el conjunto de entrenamiento.
-
-
-
-
+Es un problema que sufren principalmente los modelos pertenecientes a aprendizaje automático. Un ajuste *perfecto* sobre el conjunto de entrenamiento impide desempeñarse de manera adecuada con cualquier otro dato que no haya sido contemplado en su entrenamiento. **Esto se detecta cuando tenemos un error de ajuste muy bajo en el conjunto de prueba y un error muy alto en el conjunto de entrenamiento.**
 
 ### No Free Lunch Theorem
-
-
 
 Se refiere a la no existencia de modelos Universales.
 
@@ -578,16 +583,146 @@ Se refiere a la no existencia de modelos Universales.
 
 Aunque probemos nuestro modelo y lo validemos con los métodos adecuados para obtener cierta capacidad de generalización en cierto dominio de aplicación, este se desempeñara pobre en otros dominios diferentes.
 
+**Tarea 3** Experimento validación cruzada
+
+Replicar el ejemplo de la figura 1.21 pero con diferente conjunto de datos. Estos pueden ser sintéticos, o descargados de alguna base de datos. 
+
+Dudas:
+
+​	1) 
+
+Trabajar con vectores bidimensionales para porderlos graficar y observar sin dificultad en un plano 2-d.
+
+Hacer validación cruzada. con al menos 2-iteraciones  (2-fold validation).
+
+Como producto generar una figura parecida a 1.15(d), 1.21 (a). e identificar con que parámetro existe sobre ajuste, y sub-ajuste. 
+
+Dudas por correo electrónico rdglpz@gmail.com o en clase
+
+Entrega para el viernes 12 Marzo
+
+Se pueden apoyar del siguiente código en Python: 
+
+https://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#sphx-glr-auto-examples-neighbors-plot-classification-py
 
 
-## Unidad 2 Interpretación Geométrica de la Clasificación
 
-### Definición de clases
+## Unidad 2 Interpretación Geométrica de la Clasificación 
+
+Viernes 5 de Marzo (Unidad 7 pag, 217, Linear regression)
+
+El modelo mas sencillo para clasificación es la regresión logística. 
+
+Es derivado de la regresión lineal (por eso su nombre aunque sea un modelo clasificador).
+
+**Regresión Lineal: Formulación de Mínimos Cuadrados Ordinarios**
+
+Para poder tener un modelo OLS, es necesario tener dos componentes:
+
+1) El modelo de probabilidad: funcion de densidad de probabilidad de la distribución Normal. 
+
+$$p(y|x,\theta) = N(y|\mu,\sigma^2) = (\frac{1}{2 \pi \sigma^2})^2 \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mu)^2 )$$
+
+
+
+2) El modelo al cual se ajustan los datos.
+
+$$f(x) = \mathbf{w}^T \mathbf{x}_i$$
+
+![Screen Shot 2021-03-03 at 11.21.59](figures/Screen Shot 2021-03-03 at 11.21.59.png)
+
+Juntando estos dos componentes, haciando un cambio de parámetros $\theta = \mu = \mathbf{w}^T \mathbf{x}_i$
+
+Tenemos:
+
+$$p(y|x,\mathbf{w}) = N(y|\mathbf{w}^T\mathbf{x},\sigma^2) = (\frac{1}{2 \pi \sigma^2})^2 \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mathbf{w}^T \mathbf{x}_i)^2 )$$
+
+El cual es el modelo que queremos ajustar a través de los parámetros $mathbf{w}$ a un conjunto de datos $D$. Formalmente se expresa como los parámetros estimados que maximizan la log verosimilitud de la función de densidad de probabilidad (de la distribución Normal ) $p$, de un conjunto de datos  $D = \{\mathbf{x_i},y_i\}_i^{|D|}$ , dado un conjunto de parámetros $\theta$
+
+$$l(\hat{\mathbf{\theta}}) = \text{arg max}_{\mathbf{\theta}} \text{ log } p(D|\mathbf{\theta}) $$
+
+Si asumimos que los datos son independientes e identicamente distribuidos. (pregunta, que significa esto??)
+
+Porque queremos maximizar la (log) verosimilitud.? 
+
+![Screen Shot 2021-03-03 at 11.22.07](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-03 at 11.22.07.png)
+
+Fuente: https://tereom.github.io/est-computacional-2018/maxima-verosimilitud.html
+
+podemos escribir 
+
+$$l(\mathbf{\theta}) = \text{ log } p(D|\mathbf{\theta}) = \sum_{i=1}^N \text{log } p(y_i|\mathbf{x}_i,\mathbf{\theta}_i) $$
+
+Para ajustar el modelo de optimización al enfoque *estándar* (la mayoría de los modelos y paquetes de software de optimización minimizan en vez de maximizar) se calcula la log verosimilitud negativa. 
+
+$$NLL(\theta) = -\sum_{i=1}^N \text{log } p(y_i|\mathbf{x}_i,\mathbf{\theta}_i)$$
+
+Una vez que tenemos definido nuestra función general de optimización procedemos a sustituir la función de probabilidad $p$ por el modelo en concreto.
+
+$$l(\theta) = \sum_{i=1}^N \text{log } [(\frac{1}{2 \pi \sigma^2})^{1/2} \text{ exp } (\frac{1}{2 \sigma^2} (y_i-\mathbf{w}^T \mathbf{x}_i)^2)]  $$
+
+
+
+Siguiente paso es simplificar $l(\theta)$ aplicando las propiedades de los logaritmos 
+
+https://www.google.com/search?q=propiedades+de+los+logaritmos&rlz=1C5CHFA_enMX908MX908&sxsrf=ALeKk00X_sIpSV6eEfYlzpvvXfldGIFALg:1614727928325&tbm=isch&source=iu&ictx=1&fir=VVpbewW4sPy6ZM%252CbcZZgNlGOmbWZM%252C_&vet=1&usg=AI4_-kT-Dqfvv6-D4JZYcCzLDIiAtFpIpQ&sa=X&ved=2ahUKEwiqic6k4pLvAhVDcq0KHfLyAY4Q9QF6BAgWEAE&biw=1440&bih=798#imgrc=VVpbewW4sPy6ZM
+
+
+
+
+
+
+
+
+
+
+
+### La regresión logística
+
+Se expresa con el modelo de clasificación :
+
+$$p(y|\mathbf{x},\mathbf{w}) = Ber(y|sigm(\mathbf{w}^T \mathbf{x}))$$,
+
+donde *sigm* es la funcion de probabilidad logística:
+
+$$sigm(z) = \frac{1}{1+exp(-z)}$$.
+
+$$sigm(\mathbf{w}^T \mathbf{x}) = \frac{1}{1+exp(-\mathbf{w}^T \mathbf{x})}$$.
+
+Enseguida un conjunto de ejemplos de una familia de funciones sigmoides de dos parámetros.
+
+**![Screen Shot 2021-03-02 at 19.57.32](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-02 at 19.57.32.png)**
+
+
+
+**Formulando la maxima Maxima verosimilitud a partir de la función de probabiliad**.
+
+La log verosimilitud de la función logística es equivalente a la log verosimilitud de la función de probabilidad de Bernoulli
+
+$$LL(\mathbf{w}) = -log [ ]$$
+
+
+
+Si $ \text{ log } L(\theta) = \text{ log } sigm(\theta)$
+
+$$LL(\theta) = y \text{ log } sigm(\mathbf{\mathbf{w}^T \mathbf{x}})  + (1-y)  \text{ log } [1-sigm( \mathbf{w}^T \mathbf{x} )]$$
+
+
 
 ## Unidad 3 Clasificación No supervisada
 
+Miércoles 10 de Marzo
+
 ### Definición y formulación matemática
-Definición
+
+
+
+
+## Examen Unidad 1,2 y 3
+
+Viernes 12 de Marzo
+
+
 
 
 
@@ -606,7 +741,9 @@ https://quimicayalgomas.com/wp-content/uploads/2015/03/logaritmos-propiedades.pn
 
 
 
+Extras
 
+$$p(y|x,\theta) = N(y|\mathbf{w}^T\mathbf{x},\sigma^2) = (\frac{1}{2 \pi \sigma^2})^2 \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mathbf{w}^T \mathbf{x}_i)^2 )$$
 
 
 
