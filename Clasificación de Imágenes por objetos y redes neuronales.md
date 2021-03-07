@@ -603,27 +603,31 @@ Entrega para el viernes 12 Marzo
 
 Se pueden apoyar del siguiente código en Python: 
 
+https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
+
 https://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#sphx-glr-auto-examples-neighbors-plot-classification-py
 
-
+https://en.wikipedia.org/wiki/Cross-validation_(statistics)#/media/File:K-fold_cross_validation_EN.svg
 
 # Unidad 2 Interpretación Geométrica de la Clasificación 
 
 Viernes 5 de Marzo
 
-La regresión logística es un modelo estadístico que utiliza una función sigmoidal para modelar variables dependientes binarias. 
+Notas: Correcciónes y aclaraciones en la notación están escritas con un * con respecto a la última versión.
 
-En términos geométricos, regresión logística trata de encontrar un plano que separe las clases de la mejor manera. 
+La regresión logística es un modelo estadístico que utiliza una **función sigmoidal** para modelar variables dependientes binarias. 
+
+En términos geométricos, regresión logística trata de encontrar un plano que separe las clases **minimizando el error de clasificación**. 
 
 Trabaja con conjunto de datos (dataset) casi separables.
 
-Para clasificación binaria, si un hiperplano puede separar razonablemente bien dos clases, entonces se dice que el conjunto de datos es linealmente separable.
+Para clasificación binaria, si un hiperplano puede separar razonablemente bien dos clases, entonces se dice que el conjunto de datos es **linealmente separable**.
 
 ### Derivación de la interpretación geométrica
 
 Ejemplo:
 
-Imaginemos que tenemos un conjunto de datos  $D\in\{x_i,y_i\}_{i=1}^N$ donde $y_i\in \{0,1\}$ y $x_i \in R^{dim}$ 
+Imaginemos que tenemos un conjunto de datos  $D\in\{x_i,y_i\}_{i=1}^N$ donde $y_i\in \{0,1\}$ y $x_i \in R^{Dim}$ 
 
  Para este conjunto de datos necesitamos una función (lineal) que nos ayude a separar los datos en dos clases. 
 
@@ -633,63 +637,87 @@ $ax+by+c=0$
 
 donde en aprendizaje automático para un hiperplano cualquiera se escribe como:
 
-$$\mathbf{w}^T\mathbf{x}_i + w_0 = 0$$
+$$\mathbf{w}^T\mathbf{x}_i + w_0 = 0$$,
 
-y queremos encontrar los mejores parámetros $\mathbf{w}$. que nos ayuden a maximizar la precision de la clasificación en el conjunto de datos $D$
+y queremos encontrar los mejores parámetros $\mathbf{w}$. que nos ayuden a **maximizar la precisión** (minimizando el error)  de la clasificación en el conjunto de datos $D$
 
-Si la línea pasa sobre el origen entonces el intercepto $w_0 = 0$
+Si la línea pasa sobre el origen del hiperplano entonces el intercepto $w_0 = 0$
 
 Problema:
 
-Dado un conjunto $D\in\{x_i,y_i\}_{i=1}^N$ donde la respuesta esta dada por  $y_i\in \{0,1\}$ y y la variable independiente es  $x_i \in R^{dim}$, encontrar un hiperplano que pueda separar ambas clases lo mejor posible, de tal manera que también pueda clasificar correctamente nuevos datos. 
-
-Ejemplo "hiperplano" bidimensional. ![1_C_9o-V8HXabrzb9Z3IbR6w](figures/1_C_9o-V8HXabrzb9Z3IbR6w.jpg)
-
-Los pesos $\mathbf{w}$ se representan geometricamente en un plano. Ests son ortogonales a la frontera de decisión.
-
-Ejemplo, si la frontera de decisión esta dada por 
-
-$2x=y$
-
-Entonces el plano ortogonal correspondiente esta dado por
-
-$-1/2x = y$
+Dado un conjunto $D\in\{x_i,y_i\}_{i=1}^N$ donde la respuesta esta dada por una variable binaria  $y_i\in \{-1,1\}$ (*) y  la variable independiente es  $x_i \in R^{dim}$, encontrar un hiperplano que pueda separar ambas clases de tal manera que también pueda clasificar correctamente nuevos datos. 
 
 
 
-Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ . Cual sería la frontera de desición?
+Ejemplo "hiperplano" bidimensional
 
-Para probar a que clase pertenece un punto $x_i$ es necesario acordarnos de la fórmula para medir la distancia  mas cercana de  un punto $x_i$ y su dirección a la recta.
+. ![1_C_9o-V8HXabrzb9Z3IbR6w](figures/1_C_9o-V8HXabrzb9Z3IbR6w.jpg)
 
-(Sin intercepto)
+Los pesos $\mathbf{w}$ se representan geométricamente en un plano como un punto $P=({w_0},{w_1})$, el cual a su vez es la terminación un vector con dirección ortogonal a la frontera de decisión.
+
+Ejemplo *: Si la frontera de decisión esta dada por la recta. 
+
+$m_f w_0= w_1$
+
+$(m_fw_0-w_1=0)$
+
+donde  $m_f=2$ (pendiente de la frontera) entonces:
+
+$2w_0=w_1$.
+
+La pendiente ortogonal correspondiente esta dado por
+
+$m_o w_0 =w_1 $
+
+donde $m_o=-1/2$
+
+$-1/2w_0 = w_1$
+
+Porque en el plano bidimensional se cumple que
+
+ $m_f m_o = -1$
+
+$\frac{2}{1}\cdot-\frac{1}{2}= -1 $ 
+
+
+
+**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ . Cual sería la pendiente de la frontera de desición?
+
+Para probar a que clase pertenece un punto $x_i$ es necesario acordarnos de la fórmula para medir la distancia  mas cercana de un punto $x_i$ a la recta. 
+
+(Distancia Sin intercepto)
 
 $$d_i = \frac{\mathbf{w}^T \mathbf{x_i}} {||\mathbf{w}||}$$
 
-(Con intercepto)
+(Distancia con intercepto)
 
 $$d_i = \frac{\mathbf{w}^T \mathbf{x_i} +w_0} {||\mathbf{w}||}$$
 
-donde $\mathbf{||w||} = (\sum_{i=1}^{Dim}w_i^{2}) ^{1/2} $ es la dirección normal al plano expresada como un vector unitario.
+donde $\mathbf{||w||} = (\sum_{i=1}^{Dim}w_i^{2}) ^{1/2} $ **es la magnitud o módulo del vector** . * (Aclaración en la definición)
 
 Por lo tanto si $d_i$>0 entonces $x_i$ pertenece a la clase positiva.
 
-Una primera formulación intuitiva de la función objetivo es la siguiente:
+Una primera formulación intuitiva de la función objetivo  es la siguiente:
 
-$$\hat{\mathbf{w}} = argmax_{\mathbf{w}} \sum_{i-1}^N (y_i \cdot \mathbf{w}^T \mathbf{x}_i) $$
+$$\hat{\mathbf{w}} = argmax_{\mathbf{w}} \sum_{i-1}^N (y_i \cdot (\mathbf{w}^T \mathbf{x}_i+w_0)) $$  
 
-Esta función estara sumando valores positivos siempre y cuando se cumpla $sign(\mathbf{w}^T \mathbf{x}_i) = sign(y_i)$
 
-Problema: Es sensible a los  datos atípicos (outliers).![1_1YmHqnQvz4OibS2i9lkODg](figures/1_1YmHqnQvz4OibS2i9lkODg.jpg)
 
-Solucion: Usar una función que  mapea $ f:(\mathbf{w}^Tx_i)\rightarrow \{0,1\}$
+Esta función estará sumando valores positivos siempre y cuando se cumpla $sign(\mathbf{w}^T \mathbf{x}_i+w_0) = sign(y_i)$
 
-![1_Xj1YlkHlIv4_z6HPskJUZA](figures/1_Xj1YlkHlIv4_z6HPskJUZA.gif)
+Problema de esta formulación: Es sensible a los  datos atípicos (outliers).
+
+![1_1YmHqnQvz4OibS2i9lkODg](figures/1_1YmHqnQvz4OibS2i9lkODg.jpg)
+
+Solución: Usar una función que  mapea $ f:y_i \cdot(\mathbf{w}^Tx_i + w_0)\rightarrow \{0,1\}$ *
+
+<img src="figures/1_Xj1YlkHlIv4_z6HPskJUZA.gif" alt="1_Xj1YlkHlIv4_z6HPskJUZA" style="zoom:50%;" />
 
 $$sigm(z) = \frac{1}{1+exp(-z)}$$
 
-Ejemplo funciones s![Screen Shot 2021-03-02 at 19.57.32](figures/Screen Shot 2021-03-02 at 19.57.32.png)
+Ejemplo funciones sigmoidales con dos parámetros.![Screen Shot 2021-03-02 at 19.57.32](figures/Screen Shot 2021-03-02 at 19.57.32.png)
 
-Esta funcion regresa valores entre 0.5 y 1 cuando $\mathbf{w}^T \mathbf{x}_i>0$
+Esta funcion regresa valores entre 0.5 y 1 cuando $y_i(\mathbf{w}^T \mathbf{x}_i + w_0)>0$*
 
 Esta funcion regresa valores entre (0, 0.5) en caso contrario.
 
@@ -697,139 +725,31 @@ Por lo tanto la nueva formulación se expresa como
 
 $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum sigm (y_i \cdot (\mathbf{w}^T x_i+w_0)))$$
 
-Problema: Tiene poca estabilidad númerica debido al exponente en el denominador.
+Problema: Tiene poca estabilidad númerica debido a los parámetros (variables) $\mathbf{w}$ en el exponente en el denominador. 
 
-Solución: Aplicar logaritmo.
+Solución: Aplicar logaritmo 
 
-(Completar con los pasos intermedios)
+$$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum log (\frac{1}{1+exp(-y_i \cdot (\mathbf{w}^T x_i+w_0)})$$
 
-$$\hat{\mathbf{w}}, \hat{w_0} = argmin_{\mathbf{w},w_0} (\sum log(\frac{1}{1+exp(-y_i \cdot (\mathbf{w}^T x_i+w_0)}) )$$
+(paso intermedio, completar por ustedes mismos)
+
+$$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum -log (1 + exp(-y_i \cdot (\mathbf{w}^T x_i+w_0))$$
+
+Último paso, convertirlo en un problema de minimización.
+
+(Completar ustedes mismos)
 
 
 
-Referencias:
+**Referencias**
+
+*Machine Learning: a Probabilistic Perspective*. by Kevin Patrick Murphy. MIT Press, 2012.
+
+https://towardsdatascience.com/geometric-interpretation-of-logistic-regression-4f85047a5860
 
 https://mathinsight.org/distance_point_plane_examples
 
-### Derivación de la regresión lineal
-
- (Unidad 7 pag, 217, Linear regression)
-
-El modelo mas sencillo para clasificación es la regresión logística. Para entender este método es importante revisar y entender la regresión lineal que se resuelve eficientemente utilizando mínimos cuadrados. 
-
-Es derivado de la regresión lineal (por eso su nombre aunque sea un modelo clasificador).
-
-**Regresión Lineal: Formulación de Mínimos Cuadrados Ordinarios**
-
-Para poder tener un modelo OLS, es necesario tener dos componentes:
-
-1) **Especificación del modelo de probabilidad**: funcion de densidad de probabilidad de la distribución Normal. 
-
-$$p(y|x,\theta) = N(y|\mu,\sigma^2) = (\frac{1}{2 \pi \sigma^2})^2 \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mu)^2 )$$
-
-
-
-![Captura-de-pantalla-2019-09-10-a-les-11.09.35](figures/Captura-de-pantalla-2019-09-10-a-les-11.09.35.png)
-
-2) **El modelo (lineal)** al cual se ajustan los datos (Fig 7.2 (a)).
-
-$$f(x) = \mathbf{w}^T \mathbf{x}_i$$
-
-![Screen Shot 2021-03-03 at 11.21.59](figures/Screen Shot 2021-03-03 at 11.21.59.png)
-
- La conexión entre estos dos componentes se hace mediante un cambio de parámetros donde  $\theta = (\mathbf{x}_i, \mathbf{w},\sigma^2)$
-
-Con este cambio obtenemos la regresión lineal *incrustada* en la distribución normal.
-
-$$p(y_i|\mathbf{x}_i,\mathbf{w},\sigma^2) = N(y_i|\mathbf{w}^T\mathbf{x}_i,\sigma^2) = (\frac{1}{2 \pi \sigma^2})^\frac{1}{2} \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mathbf{w}^T \mathbf{x}_i)^2 )$$
-
-El cual es el modelo que queremos ajustar a través de los parámetros $\mathbf{w}$.
-
-Formalmente se expresa como los parámetros que maximizan la verosimilitud de la función de densidad de probabilidad (Normal) $p$, de un conjunto de datos  $D = \{\mathbf{x}_i,y_i\}_i^{|D|}$, y un conjunto de parámetros $\theta$.
-
-$$\hat{\mathbf{\theta}} = \text{arg max}_{\mathbf{\theta}} \text{  } p(D|\mathbf{\theta}) $$ (Fig. de la izq.)
-
-
-
-![Screen Shot 2021-03-03 at 11.22.07](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-03 at 11.22.07.png)
-
-Fuente: https://tereom.github.io/est-computacional-2018/maxima-verosimilitud.html
-
-Esta definición, produce un problema de optimización (no convexo) el cual es dificil de resolver eficientemente.
-
- Por lo tanto una definición equivalente que en teoría ofrece el mismo resultado  es la **log** **-verosimilitud**. Esta forma permite construir un problema de optimización convexo, el cual es posible resolver eficientemente. 
-
-$$l(\hat{\mathbf{\theta}}) \triangleq \text{arg max}_{\mathbf{\theta}} \text{ log } p(D|\mathbf{\theta}) $$
-
-**Preguntas**
-
-1) Si asumimos que los datos son independientes e identicamente distribuidos. (pregunta, que significa esto??)
-
-2) Porque queremos maximizar la (log) verosimilitud.? 
-
-
-
-Por lo tanto podemos escribir la log-verosimilitud de $l$ la siguiente manera considerando un conjunto de datos $D$
-
-$$l(\mathbf{\theta}) = \text{ log } p(D|\mathbf{\theta}) = \sum_{i=1}^N \text{log } p(y_i|\mathbf{x}_i,\mathbf{\theta}) $$
-
-Para ajustar el modelo de optimización al enfoque *estándar* (la mayoría de los modelos y paquetes de software de optimización minimizan en vez de maximizar) se calcula la negativa log-verosimilitud $NLL$. 
-
-$$NLL(\theta) = -\sum_{i=1}^N \text{log } p(y_i|\mathbf{x}_i,\mathbf{\theta}_i)$$
-
-Una vez que tenemos definido nuestra función general con la cual medimos que tan bueno son nuestro parametros $\theta$ para ajustar $D$, procedemos a sustituir la función de probabilidad $p$ por el modelo en concreto.
-
-$$l(\theta) = \sum_{i=1}^N \text{log } [(\frac{1}{2 \pi \sigma^2})^{1/2} \text{ exp } (-\frac{1}{2 \sigma^2} (y_i-\mathbf{w}^T \mathbf{x}_i)^2)]  $$
-
-
-
-Siguiente paso es simplificar $l(\theta)$ aplicando las propiedades de los logaritmos.
-
-
-
-https://www.google.com/search?q=propiedades+de+los+logaritmos&rlz=1C5CHFA_enMX908MX908&sxsrf=ALeKk00X_sIpSV6eEfYlzpvvXfldGIFALg:1614727928325&tbm=isch&source=iu&ictx=1&fir=VVpbewW4sPy6ZM%252CbcZZgNlGOmbWZM%252C_&vet=1&usg=AI4_-kT-Dqfvv6-D4JZYcCzLDIiAtFpIpQ&sa=X&ved=2ahUKEwiqic6k4pLvAhVDcq0KHfLyAY4Q9QF6BAgWEAE&biw=1440&bih=798#imgrc=VVpbewW4sPy6ZM
-
-
-
-
-
-
-
-
-
-
-
-### La regresión logística
-
-Se expresa con el modelo de clasificación :
-
-$$p(y|\mathbf{x},\mathbf{w}) = Ber(y|sigm(\mathbf{w}^T \mathbf{x}))$$,
-
-donde *sigm* es la funcion de probabilidad logística:
-
-$$sigm(z) = \frac{1}{1+exp(-z)}$$.
-
-$$sigm(\mathbf{w}^T \mathbf{x}) = \frac{1}{1+exp(-\mathbf{w}^T \mathbf{x})}$$.
-
-Enseguida un conjunto de ejemplos de una familia de funciones sigmoides de dos parámetros.
-
-**![Screen Shot 2021-03-02 at 19.57.32](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-02 at 19.57.32.png)**
-
-
-
-**Formulando la maxima Maxima verosimilitud a partir de la función de probabiliad**.
-
-La log verosimilitud de la función logística es equivalente a la log verosimilitud de la función de probabilidad de Bernoulli
-
-$$LL(\mathbf{w}) = -log [ ]$$
-
-
-
-Si $ \text{ log } L(\theta) = \text{ log } sigm(\theta)$
-
-$$LL(\theta) = y \text{ log } sigm(\mathbf{\mathbf{w}^T \mathbf{x}})  + (1-y)  \text{ log } [1-sigm( \mathbf{w}^T \mathbf{x} )]$$
-
-
+https://quimicayalgomas.com/wp-content/uploads/2015/03/logaritmos-propiedades.png
 
 ## Unidad 3 Clasificación No supervisada
 
@@ -848,57 +768,22 @@ Viernes 12 de Marzo
 
 
 
-
 ## Bibliografía
 
-1. https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
+
+
+
 
 https://www.um.es/geograf/sigmur/temariohtml/node74_mn.html
 
-https://www.aprendemachinelearning.com/7-pasos-machine-learning-construir-maquina/
-
-https://en.wikipedia.org/wiki/Cross-validation_(statistics)#/media/File:K-fold_cross_validation_EN.svg
-
-https://quimicayalgomas.com/wp-content/uploads/2015/03/logaritmos-propiedades.png
 
 
 
-## Apéndice
 
 
 
-$$p(y|x,\theta) = N(y|\mathbf{w}^T\mathbf{x},\sigma^2) = (\frac{1}{2 \pi \sigma^2})^2 \cdot exp(-\frac{1}{2\sigma^2}(y_i - \mathbf{w}^T \mathbf{x}_i)^2 )$$
 
 
 
-La dirección nos indicará la clasificación a la cual pertenece.
-
-Ejemplo clasificar un conjunto de datos en el plano bidimensional con la ecuación de la recta $wx=y$.
-
-1) $wx-y=0$
-
-2) Cambio de signo $-wx+y = 0$
-
-si $d_i>0$ y $y_i>0$ entonces $d_i*y_i>0$ cuenta como clasificación correcta
-
-si $d_i<=0$ y $y_i<=0$ entonces $d_i*y_i>0$ cuenta como clasificación correcta de la clase negativa
-
-Lo que queremos es maximizar el numero de clasificaciones correctas.
-
-
-
-$$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w}} (\sum y_i \cdot (\mathbf{w}^T x_i+w_0))$$
-
-Como esta función objetivo es sensible a los valores extremos, es necesario formular una alternativa insensible a las distancias entre los puntos y la recta.
-
-
-
-$$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w}} (\sum sigmoid (y_i \cdot (\mathbf{w}^T x_i+w_0)))$$
-
-donde $sigmoid(n) = \frac{1}{1+exp(-n)}$
-
-$$argmin_{\mathbf{w}} \sum_{i-1}^N (y-\hat{y})^2 $$
-
-donde $\hat{y}= sign(d_i)$
 
 
