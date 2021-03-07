@@ -727,7 +727,7 @@ $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum sigm (y_i \cdot (\
 
 Problema: Tiene poca estabilidad númerica debido a los parámetros (variables) $\mathbf{w}$ en el exponente en el denominador. 
 
-Solución: Aplicar logaritmo 
+Solución: Aplicar logaritmo.
 
 $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum log (\frac{1}{1+exp(-y_i \cdot (\mathbf{w}^T x_i+w_0)})$$
 
