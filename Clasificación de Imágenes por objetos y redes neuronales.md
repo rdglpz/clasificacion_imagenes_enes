@@ -653,25 +653,25 @@ Ejemplo "hiperplano" bidimensional
 
 . ![1_C_9o-V8HXabrzb9Z3IbR6w](figures/1_C_9o-V8HXabrzb9Z3IbR6w.jpg)
 
-Los pesos $\mathbf{w}$ se representan geométricamente en un plano como un punto $P=({w_0},{w_1})$, el cual a su vez es la terminación un vector con dirección ortogonal a la frontera de decisión.
+Los pesos $\mathbf{w}$ se representan geométricamente en un plano como un punto $P=({w_1},{w_2})$, el cual a su vez es la terminación un vector con dirección ortogonal a la frontera de decisión.
 
 Ejemplo *: Si la frontera de decisión esta dada por la recta. 
 
-$m_f w_0= w_1$
+$m_f w_1= w_2$
 
-$(m_fw_0-w_1=0)$
+$(m_fw_1-w_2=0)$
 
-donde  $m_f=2$ (pendiente de la frontera) entonces:
+Ejemplo:  Si  $m_f=2$ (pendiente de la frontera) entonces:
 
-$2w_0=w_1$.
+$2w_1=w_2$.
 
 La pendiente ortogonal correspondiente esta dado por
 
-$m_o w_0 =w_1 $
+$m_o w_1 =w_1 $
 
 donde $m_o=-1/2$
 
-$-1/2w_0 = w_1$
+$-1/2w_1 = w_2$
 
 Porque en el plano bidimensional se cumple que
 
@@ -681,7 +681,13 @@ $\frac{2}{1}\cdot-\frac{1}{2}= -1 $
 
 
 
-**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ . Cual sería la pendiente de la frontera de desición?
+**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ en el punto $P=(w_1,w_2)$. Cual sería la pendiente de la frontera de decisión?
+
+**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ e intercepto b=2. Cual sería la **recta** de la frontera de decisión?
+
+
+
+
 
 Para probar a que clase pertenece un punto $x_i$ es necesario acordarnos de la fórmula para medir la distancia  mas cercana de un punto $x_i$ a la recta. 
 
@@ -693,7 +699,7 @@ $$d_i = \frac{\mathbf{w}^T \mathbf{x_i}} {||\mathbf{w}||}$$
 
 $$d_i = \frac{\mathbf{w}^T \mathbf{x_i} +w_0} {||\mathbf{w}||}$$
 
-donde $\mathbf{||w||} = (\sum_{i=1}^{Dim}w_i^{2}) ^{1/2} $ **es la magnitud o módulo del vector** . * (Aclaración en la definición)
+donde $\mathbf{||w||} = (\sum_{i=1}^{Dim}w_i^{2}) ^{1/2} $ **es la magnitud o módulo del vector**. * (Aclaración en la definición)
 
 Por lo tanto si $d_i$>0 entonces $x_i$ pertenece a la clase positiva.
 
@@ -741,7 +747,95 @@ $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum -log (1 + exp(-y_i
 
 
 
+**Utilizando la ecuación del hiper-plano $ax+by+cz+d=0$ para resolver la frontera de decisión de un clasificador lineal **
+
+
+
+**Ecuación General del hiperplano**
+
+$ax+by+cz+d=0$
+
+*nota: hiperplano o plano se utilizan en este apartado indistintamente*
+
+Dada una dirección en R$^{Dim}$,  con $Dim>1$, hay infinitos hiperplanos perpendiculares. Si se conoce un punto un inicial $P_0$ de un hiperplano perpendicular a la dirección en R$^{Dim}$, entonces este queda definido.
+
+Como formular la ecuación del plano $\pi$ que pasa por el origen con coordenadas $P_0$ y es perpendicular al vector $\mathbf{w} = [w_1,w_2,w_3]^T$? 
+
+*Esta ecuación del plano  es la frontera de decisión de nuestro clasificador*.
+
+$\mathbf{w}^T \mathbf{x} = 0$
+
+Dado un punto $P_0 = \mathbf{x}^0 = [x_1^0,x_2^0,x_3^0] = [0,0,0]$ que es el  punto que pasa por el origen, y el vector $\mathbf{w}$ encontrar la ecuación del hiperplano.
+
+Para construir un hiperplano se requiere otro punto $P$ que forma parte del hiperplano y expresa como $P \in \pi$, donde $P= \mathbf{x} = [x_1,x_2,x_3]$ no lo conocemos pero  satisface el producto interno:
+
+ $\overrightarrow {P_0P} \cdot \overrightarrow{\mathbf{w}}=0$
+
+$\overrightarrow {P_0P} = [(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] $
+
+$(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0) \cdot (w_1,w_2,w_3) = 0 $
+
+agrupando terminos
+
+$w_1(x_1-x_1^0),w_2(x_2-x_2^0),w_3(x_3-x_3^0) = 0$
+
+$w_1x_1 + w_2x_2 + w_3x_3 + (-w_1x_1^0 -w_2x_2^0-w_3x_3^0) = 0$
+
+Si sustituimos $\mathbf{w}=[1,1]$ 
+
+$1*x_1+1*x_2 + 0 = 0$
+
+donde: $d= (-w_1x_1^0 -w_2x_2^0-w_3x_3^0) $
+
+por lo tanto la ecuación general del plano es:
+
+$w_1x_1 + w_2x_2 + w_3x_3 + d = 0$
+
+
+
+Ejercicio (1.a). En una dimensión $Dim = 2$. Encontrar la ecuación del plano $\pi$ que pasa por las coordenadas $P_{0} = [0,0]$ y es la frontera de decisión de un clasificador lineal con pesos $\mathbf{w}=[1,2]$.
+
+Respuesta:
+
+paso 1. Sustituir valores en la ecuación de la recta $w_1x_1 + w_2x_2 + (-w_1^0x_1 -w_2x_2^0) = 0$
+
+paso 2. Simplificar.
+
+1.b Dibujar la frontera de decisión en el plano.
+
+$w_1 x_1 +w_2x_2 = 0$
+
+$w_1 x_1 / w_2 = x_2$
+
+(se hace despejando la variable dependiente, en este caso $x_2$)
+
+1.c  Igual que el ejercicio 1.a pero ahora $P_0=[0,2]$
+
+$w_1x_1 + w_2x_2 + w_3x_3 + (-w_1x_1^0 -w_2x_2^0-w_3x_3^0) = 0$
+
+$1*x_1+2*x_2 + (-1*0-2*2) = 0$
+
+$d = 0-4 = -4$
+
+$1*x_1+2*x_2 -4 = 0$
+
+$1*x_1-4 = -2*x_2 $
+
+$(x_1-4)/-2 = x_2$
+
+
+
+
+
+
+
+1.d Extra. Extender el ejercicio (1.a) a 3 dimensiones ( $Dim =3$), con  $P_0 = [0,0,0]$ y $\mathbf{w}=[2,3,4]$
+
+
+
 **Referencias**
+
+https://aga.frba.utn.edu.ar/blog/2016/09/08/ecuaciones-del-plano/
 
 *Machine Learning: a Probabilistic Perspective*. by Kevin Patrick Murphy. MIT Press, 2012.
 
@@ -755,10 +849,128 @@ https://quimicayalgomas.com/wp-content/uploads/2015/03/logaritmos-propiedades.pn
 
 Miércoles 10 de Marzo
 
-### Definición y formulación matemática
+La clasificación no supervisada (CNS) forma parte de aprendizaje no supervisado (ANS). 
+
+El ANS consiste en extraer información de una distribución sin requerir la intervención de un experto para modelar o marcar datos. 
+
+Una tarea clásica de ANS es encontrar la mejor representación de los datos con modelos simples para que preserven la máxima información posible.
+
+Dentro del ANS encontramos esta clasificación no excluyente de diferentes técnicas.
+
+1. Representación en bajas dimensiones
+2. Representaciones independientes.
+3. Representaciones dispersas.
+
+Los algoritmos de  CNS se apoyan de una o de este tipo de representaciones.
+
+### Definición y formulación matemática.
 
 
 
+Un problema de clasificación no supervisada, es determinar el mejor número de clases que existe en un conjunto de datos.
+
+Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
+
+Este es un método para validar la coherencia en el análisis de grupos.
+
+El coeficiente de silhueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
+
+#### Definición:
+
+Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente sihueta esta dado por: 
+
+$s(i) = \frac{b(i)-a(i)}{max\{a(i),b(i)\}} ,  \text{ si } |C_i|>1$
+
+$s(i)=0,\text{ si } |C_i| = 1$
+
+$-1 < s(i) < +1$
+
+donde 
+
+$a(i) = \frac{1}{|C_i|-1}\sum_{j\in C_i, i \neq j} d(i,j)$
+
+Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (cluster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
+
+$b(i) = \text{min}_{k \neq i} \frac{1}{|C_k|} \sum_{j\in C_k } d(i,j)$
+
+es la diferencia media del punto $i$ a algún grupo $C$
+
+
+
+![Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil](figures/Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil.png)
+
+ 
+
+Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+
+**Un algoritmo de agrupamiento:  k-medias**
+
+Es una variante al algoritmode EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada gupo, donde $K$ es el número de grupos. 
+
+Estas supocisiones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
+
+Paso *Expectation*
+
+$p(z_ik|\mathbf{x}_i,\theta ) \sim \mathbf{I}(k=z_i^*)  $
+
+donde $z_i^* = argmax_k p(z_i=k|\mathbf{x}_i,\theta)$
+
+El grupo mas probable de pertenencia se calcula con:
+
+$z_i^* = \text{arg min}_k ||\mathbf{x_i}-\mathbf{\mu}_k||_2^2$
+
+Paso *Maximization*
+
+$\mathbf{\mu}_k = \frac{1}{N_k}\sum_{\mathbf{x}_i\in C_{z_i}, z_i = k} \mathbf{x}_i$
+
+Dónde  $z_i = k$
+
+Algoritmo:
+
+![Screen Shot 2021-03-10 at 9.15.47](figures/Screen Shot 2021-03-10 at 9.15.47.png)
+
+
+
+
+
+**Utro algoritmo de agrupamiento: agrupamiento jerárquico**	
+
+Es un algoritmo agrupamientos de manera anidada. 
+
+Hay dos enfoques heurísticos.
+
+1. Enfoque aglomerativo (abajo hacia arriba, *botton - up*)
+   1. Enlace sencillo (nearest neighbor clustering).
+      1. $d_{SL}(G,H) = min_{i \in G, i'\in H} d(i,i')$
+   2. Enlace completo
+      1. $d_{CL}(G,H) = max_{i \in G, i'\in H} d(i,i')$
+   3. Enlace promedio.
+      1. $d_{avg}(G,H)=\frac{1}{n_g n_H}\sum_{i\in G,i' \in H}d(i,i')$
+2. Enfoque divisivo. (De arriba hacia abajo, *top-down*)
+   1. K-means bisectiva 
+   2. Analisis de disimilaridad. 
+      1. Los vectores mas diferentes se van sacando del grupo principal G a H.
+      2. 
+
+Trabajan con una matriz de  distancias llamada **matriz de disimilaridad**.
+
+
+
+![Screen Shot 2021-03-10 at 10.05.51](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-10 at 10.05.51.png)
+
+![Screen Shot 2021-03-10 at 10.00.14](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-10 at 10.00.14.png)
+
+
+
+Ejemplo de la página del Software STAT555 https://online.stat.psu.edu/stat555/node/86/
+
+Es complicado definir formalmente una calidad para medir el mejor agrupamiento pero siempre regresan una solución.
+
+
+
+
+
+https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrogram.html
 
 ## Examen Unidad 1,2 y 3
 
