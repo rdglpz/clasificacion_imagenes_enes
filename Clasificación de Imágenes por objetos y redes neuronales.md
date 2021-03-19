@@ -37,7 +37,7 @@ Ejemplos de problemas que son fáciles para los humanos pero dificiles para las 
 
 
 
-Hay otros problemas que van mas allá de tema pero vale la pena mencionar son, aquellos problemas de decisión dificiles para las computadoras y para los humanos. El problema es si los humanos delegamos a una computadora tomar decisiones éticas.  
+Hay otros problemas que van mas allá de tema pero vale la pena mencionar que son aquellos problemas de decisión dificiles para las computadoras y para los humanos. El problema es si los humanos quremos delegar a una computadora la toma de decisiones éticas.  
 
 * Decisiones éticas. 
 
@@ -204,7 +204,7 @@ Tomando como guía la figura del diagrama de Venn,  y enfocándonos en el área 
 
 ###  1) Aprendizaje Supervisado
 
-El aprendizaje supervisado trata de aprender una función de mapeo aproximada $\hat{f}: \mathbf{x}_i \rightarrow {\hat{y}_i} $ a la función real $f:\mathbf{x}_i \rightarrow {y_i}$ dado  a un conjunto de pares de datos etiquetados
+El aprendizaje supervisado trata de aprender una función de mapeo aproximada $\hat{f}: \mathbf{x}_i \rightarrow {\hat{y}_i} $ a la función real $f:\mathbf{x}_i \rightarrow {y_i}$ dado un conjunto de pares de datos etiquetados
 
  $$D = \{(\mathbf{x}_i,y_i)\}^N_{i=1}$$ 
 
@@ -239,7 +239,7 @@ donde:
 * Redes neuronales. 
 * Modelos gausianos
 * Modelos Bayesianos
-* Maquina de Soporte de Vectores
+* Máquina de Soporte de Vectores
 
 ### 2) Aprendizaje No supervisado
 
@@ -247,9 +247,9 @@ Este tipo de aprendizaje tiene un enfoque descriptivo con datos que no están pr
 
 $$D = \{\mathbf{x}_i\}^N_{i=1}$$.
 
- La finalidad es encontrar la estructura general de los datos. Es de útilidad para 
+ La finalidad es encontrar la estructura general de los datos es de útilidad para: 
 
-* Utilizado para etiquetado automático, cuando el etiquetado supervisado es imposible o muy costoso.
+* Etiquetado automático, cuando el etiquetado supervisado es imposible o muy costoso.
 * Resuelve el problema de encontrar clúster o grupos de datos en los datos.
 * Descubre factores latentes. (aquellas variables que dan mas información sobre el conjunto de datos).
 * Estimación de densidades de distribución.
@@ -302,7 +302,7 @@ donde $c\in \{1,\dots,C\}$
 * Predicción de concentraciones de contaminantes.
 
 ### Descubrimiento de agrupamientos:
-El descubrimiento de agrupamiento (o clustering tiene dos objetivos)
+El descubrimiento de agrupamiento (o clustering) tiene dos objetivos.
   * Objetivo 1.  Estimar la distribución de probabilidad de un conjunto de datos $D$ con $K$ grupos. Esto se puede expresar como la probabilidad de tener $K$ grupos dado un conjunto de datos $D$
 
 $$p(K|D)$$
@@ -506,7 +506,7 @@ En el caso de vecinos cercanos, la distancia para obtener una vecindad mínima c
 
 En optimización el espacio de búsqueda crece exponencialmente con el número de dimensiones del espacio.
 
-## Etapas del proceso de clasificación (miercoles 3 marzo)
+## Etapas del proceso de clasificación (miércoles 3 marzo)
 
 0. Definir el problema de clasificación (o regresión).
    1. Clasificar Flores
@@ -867,7 +867,7 @@ Los algoritmos de  CNS se apoyan de una o de este tipo de representaciones.
 
 
 
-Un problema de clasificación no supervisada, es determinar el mejor número de clases que existe en un conjunto de datos.
+Un problema de clasificación no supervisada, es determinar o aproximar el mejor número de clases que represente (o exista) un conjunto de datos.
 
 Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
 
@@ -885,7 +885,7 @@ $s(i)=0,\text{ si } |C_i| = 1$
 
 $-1 < s(i) < +1$
 
-donde 
+donde $
 
 $a(i) = \frac{1}{|C_i|-1}\sum_{j\in C_i, i \neq j} d(i,j)$
 
@@ -893,15 +893,15 @@ Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (
 
 $b(i) = \text{min}_{k \neq i} \frac{1}{|C_k|} \sum_{j\in C_k } d(i,j)$
 
-es la diferencia media del punto $i$ a algún grupo $C$
+es la mínima diferencia media del punto $i$ a algún grupo $C$
 
 
 
-![Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil](figures/Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil.png)
+![](/Users/rodrigo/Desktop/Screen Shot 2021-03-11 at 16.59.54.png)
 
- 
+Fuente: Best Clustering Configuration Metrics: Towards Multiagent Based Clustering,Conference: Advanced Data Mining and Applications - 6th International Conference, ADMA 2010, Chongqing, China, November 19-21, 2010, Proceedings, Part I. 
 
-Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html 
 
 **Un algoritmo de agrupamiento:  k-medias**
 
@@ -911,7 +911,7 @@ Estas supocisiones simplifican el problema y nos permite enfocarnos en encontrar
 
 Paso *Expectation*
 
-$p(z_ik|\mathbf{x}_i,\theta ) \sim \mathbf{I}(k=z_i^*)  $
+$p(z_i=k|\mathbf{x}_i,\theta ) \sim \mathbf{I}(k=z_i^*)  $
 
 donde $z_i^* = argmax_k p(z_i=k|\mathbf{x}_i,\theta)$
 
@@ -921,7 +921,7 @@ $z_i^* = \text{arg min}_k ||\mathbf{x_i}-\mathbf{\mu}_k||_2^2$
 
 Paso *Maximization*
 
-$\mathbf{\mu}_k = \frac{1}{N_k}\sum_{\mathbf{x}_i\in C_{z_i}, z_i = k} \mathbf{x}_i$
+$\mathbf{\mu}_k = \frac{1}{N_k}\sum_{\mathbf{}_{i: z_i = k}} \mathbf{x}_i$
 
 Dónde  $z_i = k$
 
@@ -935,7 +935,7 @@ Algoritmo:
 
 **Utro algoritmo de agrupamiento: agrupamiento jerárquico**	
 
-Es un algoritmo agrupamientos de manera anidada. 
+Es un algoritmo de agrupamiento anidado anidada. 
 
 Hay dos enfoques heurísticos.
 
@@ -946,19 +946,25 @@ Hay dos enfoques heurísticos.
       1. $d_{CL}(G,H) = max_{i \in G, i'\in H} d(i,i')$
    3. Enlace promedio.
       1. $d_{avg}(G,H)=\frac{1}{n_g n_H}\sum_{i\in G,i' \in H}d(i,i')$
-2. Enfoque divisivo. (De arriba hacia abajo, *top-down*)
-   1. K-means bisectiva 
-   2. Analisis de disimilaridad. 
-      1. Los vectores mas diferentes se van sacando del grupo principal G a H.
-      2. 
+2. Enfoque divisivo. (De arriba hacia abajo, *top-down*). Comienza con todos los datos en con un grupo que agrupa a todos los datos, y recursivamente se va dividiendo en dos (teniendo $2^{N-1}-1$ maneras de divididir un grupo de $N$ grupos en 2 grupos, es dificil de calcular el partido óptimo). 
+   1. K-means bisectiva.  
+   2. Arbol de expansión mínimo con el grafo de disimilaridad y hacer nuevos grupos rompiendo el link correpondiente a la mas larga disimilaridad.(El resultado es equivalente  a agrupamiento aglomerativo con enlace sencillo.)
+   3. Analisis de disimilaridad. 
+      1. Se comienza con un grupo o cluster $G = \{1,\dots,N\}$ que contiene todos los datos. y despues medimos la disimilaridad promedio de $i\in G$ a otros $i' \in G$ con la formula 
+         1. $d_i^G  = \frac{1}{n_G}\sum_{i' \in G}d_{i,i'}$
+      2. Los vectores mas diferentes se van sacando del grupo principal G a H.
+         1. $i^* = \text{arg max}_{i \in G} d_i^G, G = G / \{i*\}, H = \{i^*\} $
+      3. Se mueven los datos de $G$ a $H$ hasta que un criterio es alcanzado. En otras palabras tomamos un dato $i^*$ para mover que **maximiza la disimilaridad promedio** para cada $i' \in G$ pero **minimiza la disimilaridad promedio** a cada $i' \in H$.
+         1. $d_i^H \frac{1}{n_H} \sum_{i'\in H} d_{i,i'}, i^* = \text{arg max }_{i \in G} \text{ } d_i^G-d_i^H$
+      4. El resultado es un grupo  $G$ dividido en dos.
 
 Trabajan con una matriz de  distancias llamada **matriz de disimilaridad**.
 
 
 
-![Screen Shot 2021-03-10 at 10.05.51](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-10 at 10.05.51.png)
+![Screen Shot 2021-03-10 at 10.05.51](figures/Screen Shot 2021-03-10 at 10.05.51.png)
 
-![Screen Shot 2021-03-10 at 10.00.14](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-03-10 at 10.00.14.png)
+![Screen Shot 2021-03-10 at 10.00.14](figures/Screen Shot 2021-03-10 at 10.00.14.png)
 
 
 
@@ -975,6 +981,230 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrog
 ## Examen Unidad 1,2 y 3
 
 Viernes 12 de Marzo
+
+
+
+
+
+## Unidad 4 Clasificación Supervisada
+
+Orden de los temas
+
+1. Cálculo de parámetros estadísticos
+
+2. Clasificación
+
+3. Análisis de las muestras
+
+4. Selección de *áreas* de entrenamiento
+
+   
+
+Hasta el momento hemos visto: 
+
+La interpretación geométrica de un clasificador lineal $\mathbf{wx}+w_0 = 0$ con valores dados a los parámetros $\theta = (\mathbf{w},w_0)$.
+
+Diferentes formulaciónes de la función objetivo de la regresión logística comentando sus ventanjas e inconvenientes. (Linea, sigmoide y log -sigmoide)
+
+¿Qué falta ahora?
+
+Dado un conjunto de datos previamente clasificados encontrar el valor de los parámetros $\theta$ que optimize la función objetivo. 
+
+Para esto tomamos su interpretación estadística.
+
+ La regresión logística supone que para un dato $(\mathbf{x}_i,y_i)$, ($\mathbf{x}_i \in \mathbf{R}^{Dim}, y_i \in \{0,1\}$)tomado de un conjunto de datos independientemente distribuidos de una misma distribución de probabilidad, y linealmente separables, existe una probabilidad de que  $\mathbf{x}_i$ pertenezca a una clase $y_i=1$ dada por una función sigmoidal. 
+
+
+
+
+
+$p(y_i=1|\mathbf{x}_i)=sigm(z)$
+
+donde $z = \sum_{i=1}^m w_ix_i +w_0$
+
+y por la ley de la probabilidad $p(y_i=1|\mathbf{X=x}_i) + p(y_i=0|\mathbf{X=x}_1) = 1$
+
+$p(y_i=0|\mathbf{X=x}_i)=1 - sigm(z)$
+
+
+
+Utilizando esta suposición es posible utilizar o crear un algoritmo que apartir de un conjunto de datos clasificados de manera binaria   $$D = \{(\mathbf{x}_i,y_i)\}^N_{i=1}$$,  obtener los mejores valores de los parámetros para maximizar la precisión de nuestro clasificador. 
+
+
+
+Una manera es formulando una función de costo $C(\theta)$ a minimizar (e.g, minimizar el error de clasificación ), o en el caso estadístico, maximizando la máxima verosimilitud. Esto se hace en dos pasos generales.
+
+1. Formulando la función de verosimilitud
+2. Encontrar los valores $\mathbf{w}$ que maximizan la función de verosimilitud.
+
+Equivalentemente en optimización 
+
+1. Formulando una función de costo
+2. Encontrar los parámetros $\mathbf{w} $ que minimicen la función de costo.
+
+
+
+Como las variables a clasificar son binarias, la salida de la funci´øn logistica se interpreta como probabilidad de pertenencia a una clase. Por lo tanto podemos interpretar cada etiqueta como una variable aleatoria de Bernoulli $Y \sim Ber(p)$ donde $ p=sigm(\mathbf{w}^T\mathbf{x})$  (lo siento si veremos algo de Bernoulli :O!! ).
+
+
+
+Entonces utilizando la función de probabilidad de Bernoulli evaluamos en una sola expresión la probabilidad de que un dato pertenezca a una clase o a otra indistintamente de su etiqueta. 
+
+$P(Y=y_i|\mathbf{X}=\mathbf{x}_i) = sigm(\mathbf{w}^T\mathbf{x}_i +w_0)^y \cdot [1-sigm(\mathbf{w}^T\mathbf{x}_i)]^{(1-y)}$
+
+Analicemos con detenimiento los exponentes de esta función. 
+
+Si $y=0$ entonces la primera parte de la ecuación sería 1 multiplicado por la probabilidad de que $y=0$.
+
+Si $y=1$ entonces la primera parte de la ecuación sería _____
+
+Que multiplica a ______
+
+
+
+La verosimilitud es una función que depende de los parámetros de un modelo estadístico para realizar buenas inferencias acerca de su valor a partir de un conjunto de observaciones (Wikipedia). En términos prácticos, sirve también como una medida de desempeño de un conjunto de parámetros $\theta$ considerando el conjunto de  datos $D$
+
+La verosimilitud se puede expresar de manera genera como:
+
+ $L(\theta)  =  \prod_{i=1}^m p(Y=y_i | X= \mathbf{x}_i,\theta) $ 
+
+y con una simple sustitución por la función de probabilidad de Bernoulli expresión tenemos:
+
+ $L(\theta)  = \prod_{i=1}^m sigm(\mathbf{w}^T\mathbf{x}_i +w_0)^{y_i} \cdot [1-sigm(\mathbf{w}^T\mathbf{x}_i)]^{(1-{y_i})} $ 
+
+
+
+Esta función ya nos sirve para utilizarla en nuestro problema de optimización. Ya nos arroja información útil. Pero podemos simplificarla por razones de estabilidad númerica y remover componentes exponenciales que no contribuyen, por lo tanto formulamos la log-verosimilitud.
+
+ $log (L(\theta)) = LL(\theta)$ 
+
+
+
+Esta expresión se escribe:
+
+$LL(\theta) = log (\prod_{i=1}^m  sigm(\mathbf{w}^T\mathbf{x}_i +w_0)^{y_i} \cdot [1-sigm(\mathbf{w}^T\mathbf{x}_i)]^{(1-{y_i})}) $ 
+
+
+
+Qué paso sigue? **Acordarse de las propiedades de los Logaritmos!!!.**
+
+$LL(\theta) = \sum_{i=1}^m (y_i \text{ log } sigm(\mathbf{w}^T \mathbf{x}_i) + (1-y_i) \text{ log } [1-sigm(\mathbf{w}^T \mathbf{x}_i)])$
+
+Tarea! Aplicar el logaritmo a lo que falta.
+
+
+
+Esta expresión la usaremos para construir nuestra función objetivo a maximizar.
+
+$\mathbf{w},w_0 = \text{arg max }_{\theta = (\mathbf{w},w_0)} LL(\theta)$
+
+Cómo podemos maximizar?
+
+1. Probando por fuerza bruta diferentes parametros de $\theta$ y quedarnos con aquellos que nos den el máximo $LL(\theta)$. Muy costoso computacionalmente hablando.
+2. Asumir que $LL(\theta)$ tiene una estructura numérica que podemos utilizar a nuestro favor:  es monotónicamente creciente y tiene al menos un óptimo local ( un punto donde los parámetros $\theta$ ya no mejoran, o sea que la pendiente en la función evaluada en $\hat{\theta}$  = 0). De manera mas elegante es donde su derivada o gradiente $  \nabla  LL(\theta)  = 0$
+
+$\nabla f=\left[\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots \frac{\partial f}{\partial x_n} \right]$
+
+
+
+Desafortunadamente no existe una expresón exacta que resuelva 
+
+$ \nabla  LL(\theta)  = 0$
+
+Por lo tanto procedemos a utilizar optimización numérica para aproximarnos a la solución.
+
+
+
+Seleccionamos el algoritmo de gradiente ascendente para maximizar, (descendente para minimizar $-LL(\theta)$), la función $LL(\theta)$. 
+
+Para esto requerimos la derivada parcial $\frac{\partial LL(\theta)}{\partial \theta_j} $ para cada parámetro que es la que  dirigirá los parámetros hacia el óptimo.
+
+$\frac{\partial LL(\theta)}{\partial \theta_j} = \sum_{i=1}^n [y_i-sigm(\theta^T\mathbf{x}_i)]x_j$
+
+
+
+
+
+La estructura básica de proceso de optimización es:
+
+$\theta_{t+1} = \theta_{t} + \text{(tamaño de paso) }* \text{dirección}$
+
+
+
+Los parametros $\theta$ se inicializan con algun valor dentro del rango posible, de preferencia cerca de la solución si se conoce.
+
+El tamaño de paso acelera/desacelera el acercamiento al óptimo, pero puede inducir a la no convergencia.
+
+La dirección la proporciona ....??
+
+
+
+$\theta_{j,t+1} = \theta_{j,t}+n \cdot \frac{\partial LL (\theta_t)}{\partial \theta_{j,t}}$
+
+
+
+
+
+Algoritmo en pseudo código
+
+
+
+* Inicializar parámetros $\{\theta_j=0\}_{j=1}^m $
+
+* Repetir varias veces hasta cumplir un criterio de parada
+
+  * Inicializar gradiente $\{grad_j=0\}_{j=1}^m $
+
+  * Para cada tupla $(x_i,y_i)$:
+
+    * para cada parámetro $j \in \{1,\dots,m\}$
+      * $grad_{j} =  [y_i-sigm(\theta^T\mathbf{x}_i)]x_j$
+
+  * $\theta_j = \theta + n * grad_j$ para $j \in {1,\dots,m}$
+
+    
+
+en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $x_0=1$ para obtener $sigm(\theta^T\mathbf{x}_i)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+x_0\theta_0)} }$
+
+```python
+theta = inicializar parámetros
+mientras criterio_parada=false hacer:
+  para todos los parámetros 
+```
+
+
+
+
+
+
+
+ 
+
+
+
+Y para esto lo que queremos es encontrar 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
