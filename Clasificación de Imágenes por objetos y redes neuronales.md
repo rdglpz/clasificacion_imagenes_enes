@@ -867,7 +867,12 @@ Los algoritmos de  CNS se apoyan de una o de este tipo de representaciones.
 
 
 
+<<<<<<< HEAD
 Un problema de clasificación no supervisada, es determinar o aproximar el mejor número de clases que represente (o exista) un conjunto de datos.
+
+Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
+=======
+Un problema de clasificación no supervisada, es determinar el mejor número de clases que existe en un conjunto de datos.
 
 Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
 
@@ -875,6 +880,105 @@ Este es un método para validar la coherencia en el análisis de grupos.
 
 El coeficiente de silhueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
 
+#### Definición:
+
+Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente sihueta esta dado por: 
+
+$s(i) = \frac{b(i)-a(i)}{max\{a(i),b(i)\}} ,  \text{ si } |C_i|>1$
+
+$s(i)=0,\text{ si } |C_i| = 1$
+
+$-1 < s(i) < +1$
+
+donde 
+
+$a(i) = \frac{1}{|C_i|-1}\sum_{j\in C_i, i \neq j} d(i,j)$
+
+Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (cluster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
+
+$b(i) = \text{min}_{k \neq i} \frac{1}{|C_k|} \sum_{j\in C_k } d(i,j)$
+
+es la diferencia media del punto $i$ a algún grupo $C$
+
+
+
+![Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil](figures/Derivation-of-the-Overall-Silhouette-Coefficient-OverallSil.png)
+
+ 
+
+Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+
+**Un algoritmo de agrupamiento:  k-medias**
+
+Es una variante al algoritmode EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada gupo, donde $K$ es el número de grupos. 
+
+Estas supocisiones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
+
+Paso *Expectation*
+
+$p(z_ik|\mathbf{x}_i,\theta ) \sim \mathbf{I}(k=z_i^*)  $
+
+donde $z_i^* = argmax_k p(z_i=k|\mathbf{x}_i,\theta)$
+
+El grupo mas probable de pertenencia se calcula con:
+
+$z_i^* = \text{arg min}_k ||\mathbf{x_i}-\mathbf{\mu}_k||_2^2$
+
+Paso *Maximization*
+
+$\mathbf{\mu}_k = \frac{1}{N_k}\sum_{\mathbf{x}_i\in C_{z_i}, z_i = k} \mathbf{x}_i$
+
+Dónde  $z_i = k$
+
+Algoritmo:
+
+![Screen Shot 2021-03-10 at 9.15.47](figures/Screen Shot 2021-03-10 at 9.15.47.png)
+
+
+
+
+
+**Utro algoritmo de agrupamiento: agrupamiento jerárquico**	
+
+Es un algoritmo agrupamientos de manera anidada. 
+
+Hay dos enfoques heurísticos.
+
+1. Enfoque aglomerativo (abajo hacia arriba, *botton - up*)
+   1. Enlace sencillo (nearest neighbor clustering).
+      1. $d_{SL}(G,H) = min_{i \in G, i'\in H} d(i,i')$
+   2. Enlace completo
+      1. $d_{CL}(G,H) = max_{i \in G, i'\in H} d(i,i')$
+   3. Enlace promedio.
+      1. $d_{avg}(G,H)=\frac{1}{n_g n_H}\sum_{i\in G,i' \in H}d(i,i')$
+2. Enfoque divisivo. (De arriba hacia abajo, *top-down*)
+   1. K-means bisectiva 
+   2. Analisis de disimilaridad. 
+      1. Los vectores mas diferentes se van sacando del grupo principal G a H.
+      2. 
+
+Trabajan con una matriz de  distancias llamada **matriz de disimilaridad**.
+
+
+
+![Screen Shot 2021-03-10 at 10.05.51](figures/Screen Shot 2021-03-10 at 10.05.51.png)
+
+![Screen Shot 2021-03-10 at 10.00.14](figures/Screen Shot 2021-03-10 at 10.00.14.png)
+
+
+
+Ejemplo de la página del Software STAT555 https://online.stat.psu.edu/stat555/node/86/
+
+Es complicado definir formalmente una calidad para medir el mejor agrupamiento pero siempre regresan una solución.
+
+
+>>>>>>> b8a701ba829ddefdbfb12fdcef1c7e373adbfef2
+
+Este es un método para validar la coherencia en el análisis de grupos.
+
+El coeficiente de silhueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
+
+<<<<<<< HEAD
 #### Definición:
 
 Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente sihueta esta dado por: 
@@ -976,6 +1080,8 @@ Es complicado definir formalmente una calidad para medir el mejor agrupamiento p
 
 
 
+=======
+>>>>>>> b8a701ba829ddefdbfb12fdcef1c7e373adbfef2
 https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrogram.html
 
 ## Examen Unidad 1,2 y 3
@@ -1217,6 +1323,10 @@ Y para esto lo que queremos es encontrar
 
 
 https://www.um.es/geograf/sigmur/temariohtml/node74_mn.html
+
+https://turing.iimas.unam.mx/~ivanvladimir/posts/gradient_descent/
+
+https://turing.iimas.unam.mx/~ivanvladimir/posts/gradient_descent/
 
 
 
