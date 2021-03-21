@@ -867,11 +867,6 @@ Los algoritmos de  CNS se apoyan de una o de este tipo de representaciones.
 
 
 
-<<<<<<< HEAD
-Un problema de clasificación no supervisada, es determinar o aproximar el mejor número de clases que represente (o exista) un conjunto de datos.
-
-Una manera de medirlo es utilizando el Coeficiente de la Silueta 
-=======
 Un problema de clasificación no supervisada, es determinar el mejor número de clases que existe en un conjunto de datos.
 
 Una manera de medirlo es utilizando el Coeficiente de la Silueta 
@@ -972,13 +967,13 @@ Ejemplo de la página del Software STAT555 https://online.stat.psu.edu/stat555/n
 Es complicado definir formalmente una calidad para medir el mejor agrupamiento pero siempre regresan una solución.
 
 
->>>>>>> b8a701ba829ddefdbfb12fdcef1c7e373adbfef2
+
 
 Este es un método para validar la coherencia en el análisis de grupos.
 
 El coeficiente de silueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
 
-<<<<<<< HEAD
+
 #### Definición:
 
 Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente silueta esta dado por: 
@@ -1080,8 +1075,7 @@ Es complicado definir formalmente una calidad para medir el mejor agrupamiento p
 
 
 
-=======
->>>>>>> b8a701ba829ddefdbfb12fdcef1c7e373adbfef2
+
 https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrogram.html
 
 ## Examen Unidad 1,2 y 3
