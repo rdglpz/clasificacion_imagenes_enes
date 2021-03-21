@@ -16,11 +16,11 @@ Hasta el momento hemos visto:
 
 La interpretación geométrica de un clasificador lineal $\mathbf{wx}+w_0 = 0$ con valores dados a los parámetros $\theta = (\mathbf{w},w_0)$.
 
-Diferentes formulaciónes de la función objetivo de la regresión logística comentando sus ventanjas e inconvenientes. (Linea, sigmoide y log -sigmoide)
+Diferentes formulaciones de la función objetivo de la regresión logística comentando sus ventajas e inconvenientes. (Linea, sigmoide y log-sigmoide)
 
 ¿Qué falta ahora?
 
-Dado un conjunto de datos previamente clasificados encontrar el valor de los parámetros $\theta$ que optimize la función objetivo. 
+Dado un conjunto de datos previamente clasificados encontrar el valor de los parámetros $\theta$ que optimice la función objetivo. 
 
 Para esto tomamos su interpretación estadística.
 
@@ -40,7 +40,7 @@ $p(y_i=0|\mathbf{X=x}_i)=1 - sigm(z)$
 
 
 
-Utilizando esta suposición es posible utilizar o crear un algoritmo que apartir de un conjunto de datos clasificados de manera binaria   $$D = \{(\mathbf{x}_i,y_i)\}^N_{i=1}$$,  obtener los mejores valores de los parámetros para maximizar la precisión de nuestro clasificador. 
+Utilizando esta suposición es posible utilizar o crear un algoritmo que a partir de un conjunto de datos clasificados de manera binaria   $$D = \{(\mathbf{x}_i,y_i)\}^N_{i=1}$$,  obtener los mejores valores de los parámetros para maximizar la precisión de nuestro clasificador. 
 
 
 
@@ -56,7 +56,7 @@ Equivalentemente en optimización
 
 
 
-Como las variables a clasificar son binarias, la salida de la funci´øn logistica se interpreta como probabilidad de pertenencia a una clase. Por lo tanto podemos interpretar cada etiqueta como una variable aleatoria de Bernoulli $Y \sim Ber(p)$ donde $ p=sigm(\mathbf{w}^T\mathbf{x})$  (lo siento si veremos algo de Bernoulli :O!! ).
+Como las variables a clasificar son binarias, la salida de la función logística se interpreta como probabilidad de pertenencia a una clase. Por lo tanto podemos interpretar cada etiqueta como una variable aleatoria de Bernoulli $Y \sim Ber(p)$ donde $ p=sigm(\mathbf{w}^T\mathbf{x})$  (lo siento si veremos algo de Bernoulli :O!! ).
 
 
 
@@ -86,7 +86,7 @@ y con una simple sustitución por la función de probabilidad de Bernoulli expre
 
 
 
-Esta función ya nos sirve para utilizarla en nuestro problema de optimización. Ya nos arroja información útil. Pero podemos simplificarla por razones de estabilidad númerica y remover componentes exponenciales que no contribuyen, por lo tanto formulamos la log-verosimilitud.
+Esta función ya nos sirve para utilizarla en nuestro problema de optimización. Ya nos arroja información útil. Pero podemos simplificarla por razones de estabilidad numérica y remover componentes exponenciales que no contribuyen, por lo tanto formulamos la log-verosimilitud.
 
  $log (L(\theta)) = LL(\theta)$ 
 
@@ -112,14 +112,14 @@ $\mathbf{w},w_0 = \text{arg max }_{\theta = (\mathbf{w},w_0)} LL(\theta)$
 
 Cómo podemos maximizar?
 
-1. Probando por fuerza bruta diferentes parametros de $\theta$ y quedarnos con aquellos que nos den el máximo $LL(\theta)$. Muy costoso computacionalmente hablando.
-2. Asumir que $LL(\theta)$ tiene una estructura numérica que podemos utilizar a nuestro favor:  es monotónicamente creciente y tiene al menos un óptimo local ( un punto donde los parámetros $\theta$ ya no mejoran, o sea que la pendiente en la función evaluada en $\hat{\theta}$  = 0). De manera mas elegante es donde su derivada o gradiente $  \nabla  LL(\theta)  = 0$
+1. Probando por fuerza bruta diferentes parámetros de $\theta$ y quedarnos con aquellos que nos den el máximo $LL(\theta)$. Muy costoso computacionalmente hablando.
+2. Asumir que $LL(\theta)$ tiene una estructura numérica que podemos utilizar a nuestro favor:  es monótona creciente y tiene al menos un óptimo local ( un punto donde los parámetros $\theta$ ya no mejoran, o sea que la pendiente en la función evaluada en $\hat{\theta}$  = 0). De manera mas elegante es donde su derivada o gradiente $  \nabla  LL(\theta)  = 0$
 
 $\nabla f=\left[\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots \frac{\partial f}{\partial x_n} \right]$
 
 
 
-Desafortunadamente no existe una expresón exacta que resuelva 
+Desafortunadamente no existe una expresión exacta que resuelva 
 
 $ \nabla  LL(\theta)  = 0$
 
@@ -143,7 +143,7 @@ $\theta_{t+1} = \theta_{t} + \text{(tamaño de paso) }* \text{dirección}$
 
 
 
-Los parametros $\theta$ se inicializan con algun valor dentro del rango posible, de preferencia cerca de la solución si se conoce.
+Los parámetros $\theta$ se inicializan con algún valor dentro del rango posible, de preferencia cerca de la solución si se conoce.
 
 El tamaño de paso acelera/desacelera el acercamiento al óptimo, pero puede inducir a la no convergencia.
 
@@ -177,30 +177,6 @@ Algoritmo en pseudo código
     
 
 en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $x_0=1$ para obtener $sigm(\theta^T\mathbf{x}_i)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+x_0\theta_0)} }$
-
-
-
-Y para esto lo que queremos es encontrar 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

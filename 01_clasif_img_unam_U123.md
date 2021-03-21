@@ -8,7 +8,7 @@ Dr. Rodrigo López Farías
 
 1.0 Introducción al  aprendizaje automático.
 
-* En los primeros días de la inteligencia artificial, este campo tomó y resolvió los primeros problemas que intelectualmente son dificiles para los humanos pero muy fáciles para las computadoras. 
+* En los primeros días de la inteligencia artificial, este campo tomó y resolvió los primeros problemas que intelectualmente son difíciles para los humanos pero muy fáciles para las computadoras. 
 * Se ha cuestionado que es inteligencia Artificial. Si no es inteligencia humana que es?  
   * Deep y deeper Blue que derrotaron al ajedrecista Gary Kaspárov en 1996. Es una Inteligencia Artificial? ![450_1000](	figures/450_1000.jpg)
 
@@ -25,7 +25,7 @@ Retos de la inteligencia Artificial
 
 Representación de una Imagen en una Matriz.  
 
-Ejemplos de problemas que son fáciles para los humanos pero dificiles para las computadoras.
+Ejemplos de problemas que son fáciles para los humanos pero difíciles para las computadoras.
 
 * Entender el lenguaje natural.
 * Inferir el sentimiento de las personas.
@@ -37,7 +37,7 @@ Ejemplos de problemas que son fáciles para los humanos pero dificiles para las 
 
 
 
-Hay otros problemas que van mas allá de tema pero vale la pena mencionar que son aquellos problemas de decisión dificiles para las computadoras y para los humanos. El problema es si los humanos quremos delegar a una computadora la toma de decisiones éticas.  
+Hay otros problemas que van mas allá de tema pero vale la pena mencionar que son aquellos problemas de decisión difíciles para las computadoras y para los humanos. El problema es si los humanos queremos delegar a una computadora la toma de decisiones éticas.  
 
 * Decisiones éticas. 
 
@@ -55,11 +55,11 @@ En los inicios se intentó crear inteligencia artificial con codificación "dura
 
 La rigidez de este tipo de enfoque, sugiere que los sistemas de IA, deben tener la habilidad de adquirir su propio conocimiento, extrayendo patrones de los datos en bruto. Esta capacidad de las computadoras se le llama Aprendizaje Automático (AA) o **"Machine Learning"**.
 
-AA pudo hacer que las computadoras aborden problemas complejos para los humanos utilizando el conocimiento del mundo real  para tomar decisiones que parecen subjetivas. Por ejemplo, uno de los primeros éxitos es la implementación de una regresión logística simple que es capaz de recomendar o no parto por cesarea a los médicos.  (Principio utilizado por las redes neuronales) 
+AA pudo hacer que las computadoras aborden problemas complejos para los humanos utilizando el conocimiento del mundo real  para tomar decisiones que parecen subjetivas. Por ejemplo, uno de los primeros éxitos es la implementación de una regresión logística simple que es capaz de recomendar o no parto por cesárea a los médicos.  (Principio utilizado por las redes neuronales) 
 
 ![curva-sigmoide](figures/curva-sigmoide.png)
 
-El truco para que funcionen estos modelos reside en **una buena representación de los datos** que incluye una **selección de característicaís** cuidadosa  por un experto.
+El truco para que funcionen estos modelos reside en **una buena representación de los datos** que incluye una **selección de características** cuidadosa  por un experto.
 
 Una mala selección o representación de datos, genera malos algoritmos predictivos. 
 
@@ -69,7 +69,7 @@ Por ejemplo, como distinguir una persona de un carro, o de un perro.
 
 Para esto, una solución es utilizar **AA para aprender automáticamente la representación misma de los datos**. 
 
-Cuando se diseñan algoritmos para aprender características, una de las metas es distinguir los factores invariantes o características de los factores de variación  o ruido que explican los datos observados. 
+Cuando se diseñan algoritmos para aprender características, una de las metas es distinguir los factores invariables o características de los factores de variación  o ruido que explican los datos observados. 
 
 <img src="figures/download-2.jpg" alt="download-2" style="zoom:150%;" />
 
@@ -77,13 +77,13 @@ Cuando se diseñan algoritmos para aprender características, una de las metas e
 
 ![Screen Shot 2021-02-16 at 21.14.53](figures/Screen Shot 2021-02-16 at 21.14.53.png)
 
-ML responde a la pregunta de cual es el mejor modelo para explicar datos.
+ML responde a la pregunta de cuál es el mejor modelo para explicar datos.
 
 Ejemplo de como el aprendizaje profundo extrae características importantes
 
-Que características invariantes representan a un gato o a un perro?
+Qué características invariantes representan a un gato o a un perro?
 
-**Machine Learning es una subárea de de la IA que detecta patrones de manera autoática en los datos**
+**Machine Learning es una subárea de de la IA que detecta patrones de manera automática en los datos**
 
 
 
@@ -93,7 +93,7 @@ Que características invariantes representan a un gato o a un perro?
 
 Los modelos predecesores, están basados en modelos lineales simples, que trataron de asociar (o mapear) una entrada de tamaño $n$ $ \mathbf{x}= \{x_1,x_2,\dots,x_i,\dots,x_n\}$ a una salida $y_i$. 
 
-Estos modelos aprenden un conjunto de pesos $\mathbf{w} = \{w_1,w_2,\dots,w_n\}$., para ajustar una funcion $f$:
+Estos modelos aprenden un conjunto de pesos $\mathbf{w} = \{w_1,w_2,\dots,w_n\}$., para ajustar una función $f$:
 
 $$f(\mathbf{x},\mathbf{w}) = x_1 w_1+x_2 w_2 + \dots+x_n w_n$$ 
 
@@ -119,7 +119,7 @@ Ola Cero
 
 $$ sign(f(\mathbf{x},\mathbf{w})) \in \{-1,1\}$$ 
 
-Este modelo puede reconocer dos categorias. Los pesos $\mathbf{w}$ son ajustados manualmente. **No existe un mecanismo de entrenamiento.**
+Este modelo puede reconocer dos categorías. Los pesos $\mathbf{w}$ son ajustados manualmente. **No existe un mecanismo de entrenamiento.**
 
 En ese tiempo sale la primera computadora digital de propósito general: ENIAC 
 
@@ -161,7 +161,7 @@ Segunda ola: Conexionismo: (1980-1995, Rumelhart ) Impulsado por por red neurona
 
 
 
-Tercera ola: 1995 - Deep learning. Impulsado por Redes Neuronales Multi-Capa y algoritmo De Gradiente Estocástico Descendente.
+Tercera ola: 1995 - Deep Learning. Impulsado por Redes Neuronales Multi-Capa y algoritmo De Gradiente Estocástico Descendente.
 
 
 
@@ -171,7 +171,7 @@ Tercera ola: 1995 - Deep learning. Impulsado por Redes Neuronales Multi-Capa y a
 
 <img src="figures/redesTopologia.jpg" alt="redesTopologia" style="zoom:50%;" />
 
-Hochreiter (1991) y Bengio et al. (1994), Se identifico otro problema con el aprendizaje profundo que eses el modelado de secuencias muy largas, para esto Hochreiter y Schmidhuber (1997) propusieron  the long short-term memory (LSTM) para resolver estos problemas. LTSM es una red neuronal recurrente que incorpora una operación para definir el que tanto importa recordar la información para hacer una Clasificacióno regresión.
+Hochreiter (1991) y Bengio et al. (1994), Se identifico otro problema con el aprendizaje profundo que eses el modelado de secuencias muy largas, para esto Hochreiter y Schmidhuber (1997) propusieron  the long short-term memory (LSTM) para resolver estos problemas. LTSM es una red neuronal recurrente que incorpora una operación para definir el qué tanto importa recordar la información para hacer una Clasificación o regresión.
 
 ![The_LSTM_Cell.svg](figures/The_LSTM_Cell.svg.png)
 
@@ -181,7 +181,7 @@ Hochreiter (1991) y Bengio et al. (1994), Se identifico otro problema con el apr
 
 <img src="figures/venn diagram.png" alt="venn diagram" style="zoom:20%;" />
 
-Deep Learning son un tipo de aprendizaje automático que, ademas de encontrar una función de mapeo para asociarl un conjunto de características $\mathbf{x}$ con una salida datos ($\mathbf{y}$), internamente logran aprender como representar esos datos.  
+Deep Learning son un tipo de aprendizaje automático que, ademas de encontrar una función de mapeo para asociar un conjunto de características $\mathbf{x}$ con una salida datos ($\mathbf{y}$), internamente logran aprender como representar esos datos.  
 
 
 
@@ -247,14 +247,14 @@ Este tipo de aprendizaje tiene un enfoque descriptivo con datos que no están pr
 
 $$D = \{\mathbf{x}_i\}^N_{i=1}$$.
 
- La finalidad es encontrar la estructura general de los datos es de útilidad para: 
+ La finalidad es encontrar la estructura general de los datos es de utilidad para: 
 
 * Etiquetado automático, cuando el etiquetado supervisado es imposible o muy costoso.
 * Resuelve el problema de encontrar clúster o grupos de datos en los datos.
 * Descubre factores latentes. (aquellas variables que dan mas información sobre el conjunto de datos).
 * Estimación de densidades de distribución.
 
-Aplicación de ejemplo: Descubrir cuantos grupos de datos existen en los datos. Lado Izquierdo, datos sin clasificar del peso y la altura de cada persona. En la derecha detección de dos grupos diferentes.
+Aplicación de ejemplo: Descubrir cuántos grupos de datos existen en los datos. Lado Izquierdo, datos sin clasificar del peso y la altura de cada persona. En la derecha detección de dos grupos diferentes.
 
 * <img src="figures/Screen Shot 2021-02-23 at 16.14.24.png" alt="Screen Shot 2021-02-23 at 16.14.24" style="zoom:50%;" />
 
@@ -262,7 +262,7 @@ Modelos relacionados
 
 * k-medias
 * Mapas auto-organizados
-* Dendogramas
+* Dendrogramas
 * 
 
 Otros modelos no supervisados se pueden consultar en 
@@ -280,7 +280,7 @@ https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Ejemplo_divis
   $$p(y|\mathbf{x},D)$$
 
 
-  Donde $D$: es el conjunto de datos, $\mathbf{x}$ es el vector de entrada y la función regresa un valor entre 0 y 1.
+  Dónde $D$: es el conjunto de datos, $\mathbf{x}$ es el vector de entrada y la función regresa un valor entre 0 y 1.
 
   Para seleccionar la mejor estimación se utiliza un estimador de **Maximum a posteriori**
 
@@ -307,11 +307,11 @@ El descubrimiento de agrupamiento (o clustering) tiene dos objetivos.
 
 $$p(K|D)$$
 
-Para encontrar $K$, se requiere una manera de medir el ajuste de los datos los diferentes $K$ grupos, hasta maximizar la probabilidad de que el conjunto de datos $D$ sea generado por una distribucion de probabilidad.
+Para encontrar $K$, se requiere una manera de medir el ajuste de los datos los diferentes $K$ grupos, hasta maximizar la probabilidad de que el conjunto de datos $D$ sea generado por una distribución de probabilidad.
 
 $K^* = argmax_K p(K|D)$
 
-Objetivo 2:  Estimar a que grupo pertenece un dato. 
+Objetivo 2:  Estimar a qué grupo pertenece un dato. 
 
 Por ejemplo haciendo $z_i \in\{1,\dots,K\}$, donde cada punto o dato $i$, es asignado a una de esas clases. 
 
@@ -334,13 +334,13 @@ Ejemplo:
 
 * Es útil para conocer el subconjunto de variables de un vector de características que conservan la máxima información. (Podemos reconstruir la información a partir de información *clave*)
 
-* Se proyectan en un espacio de dimesión reducida $M: R^m \rightarrow R^{n}$
+* Se proyectan en un espacio de dimensión reducida $M: R^m \rightarrow R^{n}$
 
 * Por lo regular  2 <= n <=3 para poder analizar los datos visualmente.
 
 * Util para compresión de imágenes o aplicar algoritmos de agrupamiento.
 
-* Uno de los métodos mas útilizados es análisis de componentes principales o PCA.
+* Uno de los métodos mas utilizados es análisis de componentes principales o PCA.
 
 * ![Screen Shot 2021-02-23 at 20.41.44](figures/Screen Shot 2021-02-23 at 20.41.44.png)
 
@@ -357,7 +357,7 @@ Ejemplo:
 
 * Son modelos que tienen un número fijo de parámetros independientemente de la cantidad de datos. 
 * Requiere un conocimiento sobre el fenómeno mas detallado.
-* Se apoya de supociciones fuertes sobre los datos. (e.g. Datos distribuidos con cierta función de probabilidad)
+* Se apoya de suposiciones fuertes sobre los datos. (e.g. Datos distribuidos con cierta función de probabilidad)
 * Funciona bien con pocos datos.
 * No sufren de **sobre-ajuste**.
 
@@ -372,7 +372,7 @@ Ejemplos
 
 * Se requiere un conocimiento menos profundo sobre el fenómeno.
 
-* No requiere hacer supocisiones fuertes sobre los datos. 
+* No requiere hacer suposiciones fuertes sobre los datos. 
 
 * Requiere muchos datos para tener buen desempeño
 
@@ -398,7 +398,7 @@ Ejemplos
 
 Ademas de los modelos de clasifiación mencionados existen otros modelos clasificadores que también son de importancia en este curso
 
-* Minima distancia
+* Mínima distancia
 * Modelo del Paralelepípedo
 * Árboles de clasificación
 * Clasificación por máxima verosimilitud
@@ -418,7 +418,7 @@ la función $f$ toma valor de:
 * 1: si $\mathbf{w}^T\mathbf{x}+b > 0$, y
 *  $0$: de otra manera.
 
-Para el problema de clasificación de dos clases, el problema puede interpretarse como un hiperplano que divide el espcio de vectores de entrada $x$, en dos. Donde los valores que quedan de un lado del hiperplano son clasificados como positivos y lo que quedan debajo negativos
+Para el problema de clasificación de dos clases, el problema puede interpretarse como un hiperplano que divide el espacio de vectores de entrada $x$, en dos. Donde los valores que quedan de un lado del hiperplano son clasificados como positivos y lo que quedan debajo negativos
 
 ![440px-Svm_separating_hyperplanes](figures/440px-Svm_separating_hyperplanes.png)
 
@@ -432,7 +432,7 @@ La respuesta o salida $y$ de la función responde a una distribución de probabi
 
 $$p(y|\mathbf{x,w}) = Ber (y| \mu(x)$$)
 
- donde la respuesta toma dos valores: $y\in\{0,1\}$. y $\mu(\mathbf{x}) = p(y=1|x)$  es la probabilidad de exito dada una entrada $\mathbf{x}$.
+ donde la respuesta toma dos valores: $y\in\{0,1\}$. y $\mu(\mathbf{x}) = p(y=1|x)$  es la probabilidad de éxito dada una entrada $\mathbf{x}$.
 
 La función de distribución de probabilidad está dada por la función sigmoide:
 
@@ -448,7 +448,7 @@ Ejemplo:
 
 $$p(y_i=1|x_i,\mathbf{w}) = sigm(w_0+w_1x_i) $$
 
-es aplicado a definir si un estudiante pasa la prueba ($y=1$) o no ($y=0$) de acuerdo a su puntuacion.
+es aplicado a definir si un estudiante pasa la prueba ($y=1$) o no ($y=0$) de acuerdo a su puntuación.
 
 Para esto a partir de los datos ($x_i$,$y_i$), donde $x\in R$ es la calificación o puntaje representado por el eje horizontal, y $y\in{0,1}$ (pasa o aprueba la clase), representado por el eje vertical. 
 
@@ -458,7 +458,7 @@ Los rojos son salidas estimadas $p(y=1|\mathbf{x}_i,\hat{\mathbf{w}})$
 
 Si el umbral es mayor a 0.5 entonces la salida estimada será $\hat{y}(x) = p(y=1|\mathbf{x})>0.5 = 1$ 
 
- ![Screen Shot 2021-02-23 at 21.47.42](/Users/rodrigo/SourceCodes/git/clasificacion_imagenes_enes/figures/Screen Shot 2021-02-23 at 21.47.42.png)
+ ![Screen Shot 2021-02-23 at 21.47.42](/figures/Screen Shot 2021-02-23 at 21.47.42.png)
 
 
 
@@ -468,15 +468,15 @@ Si el umbral es mayor a 0.5 entonces la salida estimada será $\hat{y}(x) = p(y=
 
 **$k$ vecinos cercanos**
 
-Este algoritmo consiste en buscar aquellos datos cercanos a un *dato de prueba* dado un radio $r$ o tamaño de vecindad $K$. Y regresa la proporcion de clases encontradas. 
+Este algoritmo consiste en buscar aquellos datos cercanos a un *dato de prueba* dado un radio $r$ o tamaño de vecindad $K$. Y regresa la proporción de clases encontradas. 
 
 Este algoritmo puede expresarse como
 
 $$p(y=c|\mathbf{x},D,K)=\frac{1}{K} \sum_{i\in N_k (\mathbf{x},D)} I(y_i=c)$$
 
-Donde $N_k(\mathbf{x},D)$ son los índices pertenecientes al vencindario.
+Donde $N_k(\mathbf{x},D)$ son los índices pertenecientes al vecindario.
 
-$I(e)$ es la funcion indicadora que devuelve $1$ si $e$ es verdadero y $0$ en caso contrario.
+$I(e)$ es la función indicadora que devuelve $1$ si $e$ es verdadero y $0$ en caso contrario.
 
 con $K=1$ se genera un diagrama de Voronoi. 
 
@@ -532,7 +532,7 @@ Cuando tenemos una variedad de modelos, existe la necesidad de seleccionar el me
 
 Para esto se requiere calcular un **error generalizado**, el cual es el error esperado de la tasa de clasificaciones incorrectas de los datos futuros o no observados.
 
-Para esto es necesario organizar los datos en 1 o mas particiones, donde cada particion estará compuesto de un conjunto de datos de entrenamiento, y el restante de prueba (Fig 1.21). 
+Para esto es necesario organizar los datos en 1 o mas particiones, donde cada partición estará compuesto de un conjunto de datos de entrenamiento, y el restante de prueba (Fig 1.21). 
 
 Una manera de validar el modelo es el siguiente:
 
@@ -559,7 +559,7 @@ $$\textit{error general} = \frac{1}{M} \sum^M_{i=1} err_i(f,D)$$
 
 Donde *M* es el número de particiones diferentes.
 
-En cada partición, el conjunto de entrenmiento es utilizado para ajustar parámetro del modelo, y el conjunto de prueba para calcular el error y evitar seleccionar un modelo **sobre ajustado**.
+En cada partición, el conjunto de entrenamiento es utilizado para ajustar parámetro del modelo, y el conjunto de prueba para calcular el error y evitar seleccionar un modelo **sobre ajustado**.
 
 Este error puede ser aproximado utilizando un conjunto de datos de prueba. 
 
@@ -579,7 +579,7 @@ Es un problema que sufren principalmente los modelos pertenecientes a aprendizaj
 
 Se refiere a la no existencia de modelos Universales.
 
-*Todos los modelos estan mal pero algunos son útiles*. George Box (Box and Draper 1987)
+*Todos los modelos están mal pero algunos son útiles*. George Box (Box and Draper 1987)
 
 Aunque probemos nuestro modelo y lo validemos con los métodos adecuados para obtener cierta capacidad de generalización en cierto dominio de aplicación, este se desempeñara pobre en otros dominios diferentes.
 
@@ -591,7 +591,7 @@ Dudas:
 
 ​	1) 
 
-Trabajar con vectores bidimensionales para porderlos graficar y observar sin dificultad en un plano 2-d.
+Trabajar con vectores bidimensionales para poderlos graficar y observar sin dificultad en un plano 2-d.
 
 Hacer validación cruzada. con al menos 2-iteraciones  (2-fold validation).
 
@@ -613,7 +613,7 @@ https://en.wikipedia.org/wiki/Cross-validation_(statistics)#/media/File:K-fold_c
 
 Viernes 5 de Marzo
 
-Notas: Correcciónes y aclaraciones en la notación están escritas con un * con respecto a la última versión.
+Notas: Correcciones y aclaraciones en la notación están escritas con un * con respecto a la última versión.
 
 La regresión logística es un modelo estadístico que utiliza una **función sigmoidal** para modelar variables dependientes binarias. 
 
@@ -681,9 +681,9 @@ $\frac{2}{1}\cdot-\frac{1}{2}= -1 $
 
 
 
-**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ en el punto $P=(w_1,w_2)$. Cual sería la pendiente de la frontera de decisión?
+**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ en el punto $P=(w_1,w_2)$. Cuál sería la pendiente de la frontera de decisión?
 
-**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ e intercepto b=2. Cual sería la **recta** de la frontera de decisión?
+**Ejercicio:** Si tenemos pesos $w_1 = 2$, y $w_2 = 3$ e intercepto b=2. Cuál sería la **recta** de la frontera de decisión?
 
 
 
@@ -723,15 +723,15 @@ $$sigm(z) = \frac{1}{1+exp(-z)}$$
 
 Ejemplo funciones sigmoidales con dos parámetros.![Screen Shot 2021-03-02 at 19.57.32](figures/Screen Shot 2021-03-02 at 19.57.32.png)
 
-Esta funcion regresa valores entre 0.5 y 1 cuando $y_i(\mathbf{w}^T \mathbf{x}_i + w_0)>0$*
+Esta función regresa valores entre 0.5 y 1 cuando $y_i(\mathbf{w}^T \mathbf{x}_i + w_0)>0$*
 
-Esta funcion regresa valores entre (0, 0.5) en caso contrario.
+Esta función regresa valores entre (0, 0.5) en caso contrario.
 
 Por lo tanto la nueva formulación se expresa como
 
 $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum sigm (y_i \cdot (\mathbf{w}^T x_i+w_0)))$$
 
-Problema: Tiene poca estabilidad númerica debido a los parámetros (variables) $\mathbf{w}$ en el exponente en el denominador. 
+Problema: Tiene poca estabilidad numérica debido a los parámetros (variables) $\mathbf{w}$ en el exponente en el denominador. 
 
 Solución: Aplicar logaritmo.
 
@@ -747,7 +747,7 @@ $$\hat{\mathbf{w}}, \hat{w_0} = argmax_{\mathbf{w},w_0} (\sum -log (1 + exp(-y_i
 
 
 
-**Utilizando la ecuación del hiper-plano $ax+by+cz+d=0$ para resolver la frontera de decisión de un clasificador lineal **
+**Utilizando la ecuación del hiperplano $ax+by+cz+d=0$ para resolver la frontera de decisión de un clasificador lineal **
 
 
 
@@ -775,7 +775,7 @@ $\overrightarrow {P_0P} = [(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] $
 
 $(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0) \cdot (w_1,w_2,w_3) = 0 $
 
-agrupando terminos
+agrupando términos
 
 $w_1(x_1-x_1^0),w_2(x_2-x_2^0),w_3(x_3-x_3^0) = 0$
 
@@ -870,19 +870,19 @@ Los algoritmos de  CNS se apoyan de una o de este tipo de representaciones.
 <<<<<<< HEAD
 Un problema de clasificación no supervisada, es determinar o aproximar el mejor número de clases que represente (o exista) un conjunto de datos.
 
-Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
+Una manera de medirlo es utilizando el Coeficiente de la Silueta 
 =======
 Un problema de clasificación no supervisada, es determinar el mejor número de clases que existe en un conjunto de datos.
 
-Una manera de medirlo es utilizando el Coeficiente de la Silhueta 
+Una manera de medirlo es utilizando el Coeficiente de la Silueta 
 
 Este es un método para validar la coherencia en el análisis de grupos.
 
-El coeficiente de silhueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
+El coeficiente de silueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
 
 #### Definición:
 
-Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente sihueta esta dado por: 
+Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente silueta esta dado por: 
 
 $s(i) = \frac{b(i)-a(i)}{max\{a(i),b(i)\}} ,  \text{ si } |C_i|>1$
 
@@ -894,7 +894,7 @@ donde
 
 $a(i) = \frac{1}{|C_i|-1}\sum_{j\in C_i, i \neq j} d(i,j)$
 
-Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (cluster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
+Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (clúster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
 
 $b(i) = \text{min}_{k \neq i} \frac{1}{|C_k|} \sum_{j\in C_k } d(i,j)$
 
@@ -910,9 +910,9 @@ Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_exam
 
 **Un algoritmo de agrupamiento:  k-medias**
 
-Es una variante al algoritmode EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada gupo, donde $K$ es el número de grupos. 
+Es una variante al algoritmo EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada grupo, donde $K$ es el número de grupos. 
 
-Estas supocisiones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
+Estas suposiciones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
 
 Paso *Expectation*
 
@@ -938,7 +938,7 @@ Algoritmo:
 
 
 
-**Utro algoritmo de agrupamiento: agrupamiento jerárquico**	
+**Otro algoritmo de agrupamiento: agrupamiento jerárquico**	
 
 Es un algoritmo agrupamientos de manera anidada. 
 
@@ -953,7 +953,7 @@ Hay dos enfoques heurísticos.
       1. $d_{avg}(G,H)=\frac{1}{n_g n_H}\sum_{i\in G,i' \in H}d(i,i')$
 2. Enfoque divisivo. (De arriba hacia abajo, *top-down*)
    1. K-means bisectiva 
-   2. Analisis de disimilaridad. 
+   2. Análisis de disimilaridad. 
       1. Los vectores mas diferentes se van sacando del grupo principal G a H.
       2. 
 
@@ -976,12 +976,12 @@ Es complicado definir formalmente una calidad para medir el mejor agrupamiento p
 
 Este es un método para validar la coherencia en el análisis de grupos.
 
-El coeficiente de silhueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
+El coeficiente de silueta mide la cohesión: que tan similar es un objeto $x_i$ a su propio grupo. A cada $x_i$ se le asocia una calificación que va entre $-1,1$. Valores cercanos a 1 indican que la clasificación es consistente, y lo contrario indica que puede existir poca consistencia (clases traslapadas no separadas).
 
 <<<<<<< HEAD
 #### Definición:
 
-Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente sihueta esta dado por: 
+Partimos de un conjunto de datos clasificados de alguna manera en $k$ grupos (clusters), donde el coeficiente silueta esta dado por: 
 
 $s(i) = \frac{b(i)-a(i)}{max\{a(i),b(i)\}} ,  \text{ si } |C_i|>1$
 
@@ -993,7 +993,7 @@ donde $
 
 $a(i) = \frac{1}{|C_i|-1}\sum_{j\in C_i, i \neq j} d(i,j)$
 
-Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (cluster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
+Es la distancia promedio entre el objeto $i$ y los demás vectores en su grupo (clúster) $C_i$. Se interpreta como una *calificación de integración* del dato $i$ a su grupo $C_i$y buscamos el menor valor.
 
 $b(i) = \text{min}_{k \neq i} \frac{1}{|C_k|} \sum_{j\in C_k } d(i,j)$
 
@@ -1009,9 +1009,9 @@ Ejemplo Interactivo en Notebook Python https://scikit-learn.org/stable/auto_exam
 
 **Un algoritmo de agrupamiento:  k-medias**
 
-Es una variante al algoritmode EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada gupo, donde $K$ es el número de grupos. 
+Es una variante al algoritmo EM (Expectation - Maximization) que asume que los grupos son compactos con distribuciones gaussianas con una covarianza  fija $\sigma^2 I_D$ , y misma importancia $1/K$ para cada grupo, donde $K$ es el número de grupos. 
 
-Estas supocisiones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
+Estas suposiciones simplifican el problema y nos permite enfocarnos en encontrar los centroides de los grupos $\mu_k\in R^{Dim}$
 
 Paso *Expectation*
 
@@ -1037,7 +1037,7 @@ Algoritmo:
 
 
 
-**Utro algoritmo de agrupamiento: agrupamiento jerárquico**	
+**Otro algoritmo de agrupamiento: agrupamiento jerárquico**	
 
 Es un algoritmo de agrupamiento anidado anidada. 
 
@@ -1050,11 +1050,11 @@ Hay dos enfoques heurísticos.
       1. $d_{CL}(G,H) = max_{i \in G, i'\in H} d(i,i')$
    3. Enlace promedio.
       1. $d_{avg}(G,H)=\frac{1}{n_g n_H}\sum_{i\in G,i' \in H}d(i,i')$
-2. Enfoque divisivo. (De arriba hacia abajo, *top-down*). Comienza con todos los datos en con un grupo que agrupa a todos los datos, y recursivamente se va dividiendo en dos (teniendo $2^{N-1}-1$ maneras de divididir un grupo de $N$ grupos en 2 grupos, es dificil de calcular el partido óptimo). 
+2. Enfoque divisivo. (De arriba hacia abajo, *top-down*). Comienza con todos los datos en con un grupo que agrupa a todos los datos, y recursivamente se va dividiendo en dos (teniendo $2^{N-1}-1$ maneras de dividir un grupo de $N$ grupos en 2 grupos, es difícil de calcular el partido óptimo). 
    1. K-means bisectiva.  
-   2. Arbol de expansión mínimo con el grafo de disimilaridad y hacer nuevos grupos rompiendo el link correpondiente a la mas larga disimilaridad.(El resultado es equivalente  a agrupamiento aglomerativo con enlace sencillo.)
-   3. Analisis de disimilaridad. 
-      1. Se comienza con un grupo o cluster $G = \{1,\dots,N\}$ que contiene todos los datos. y despues medimos la disimilaridad promedio de $i\in G$ a otros $i' \in G$ con la formula 
+   2. Arbol de expansión mínimo con el grafo de disimilaridad y hacer nuevos grupos rompiendo el link correspondiente a la mas larga disimilaridad.(El resultado es equivalente  a agrupamiento aglomerativo con enlace sencillo.)
+   3. Análisis de disimilaridad. 
+      1. Se comienza con un grupo o clúster $G = \{1,\dots,N\}$ que contiene todos los datos. y después medimos la disimilaridad promedio de $i\in G$ a otros $i' \in G$ con la formula 
          1. $d_i^G  = \frac{1}{n_G}\sum_{i' \in G}d_{i,i'}$
       2. Los vectores mas diferentes se van sacando del grupo principal G a H.
          1. $i^* = \text{arg max}_{i \in G} d_i^G, G = G / \{i*\}, H = \{i^*\} $
