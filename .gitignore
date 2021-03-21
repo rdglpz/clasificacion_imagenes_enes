@@ -2,4 +2,6 @@ Clasificación de Imágenes por objetos y redes neuronales.pdf
 
 figures/.DS_Store
 
+.DS_Store
+.ipynb_checkpoints
 recursos/*
