@@ -2,20 +2,6 @@
 
 Dr. Rodrigo López Farías
 
-``` R
-y = 1
-t <- 5
-```
-
-
-
-``````python
-for i in range(len(x)):
-  print(i)
-``````
-
-
-
 ## Unidad 1. Introducción a las técnicas de Clasificación
 
 1.0 Introducción al  aprendizaje automático.
@@ -788,9 +774,11 @@ $\overrightarrow {P_0P} = [(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] $
 
 $[(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] \cdot (w_1,w_2,w_3) = 0 $
 
-agrupando términos
 
-$w_1(x_1-x_1^0),w_2(x_2-x_2^0),w_3(x_3-x_3^0) = 0$
+
+$w_1(x_1-x_1^0)+w_2(x_2-x_2^0)+w_3(x_3-x_3^0) = 0$
+
+agrupando términos
 
 $w_1x_1 + w_2x_2 + w_3x_3 + (-w_1x_1^0 -w_2x_2^0-w_3x_3^0) = 0$
 
@@ -1093,11 +1081,7 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrog
 
 ## Examen Unidad 1,2 y 3
 
-Viernes 12 de Marzo
-
-
-
-asdfasdfasdfasdf
+Viernes 12 de Mazo
 
 
 
