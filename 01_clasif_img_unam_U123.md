@@ -2,6 +2,18 @@
 
 Dr. Rodrigo López Farías
 
+``` R
+y = 1
+t <- 5
+```
+
+
+
+``````python
+for i in range(len(x)):
+  print(i)
+``````
+
 
 
 ## Unidad 1. Introducción a las técnicas de Clasificación
@@ -10,7 +22,8 @@ Dr. Rodrigo López Farías
 
 * En los primeros días de la inteligencia artificial, este campo tomó y resolvió los primeros problemas que intelectualmente son difíciles para los humanos pero muy fáciles para las computadoras. 
 * Se ha cuestionado que es inteligencia Artificial. Si no es inteligencia humana que es?  
-  * Deep y deeper Blue que derrotaron al ajedrecista Gary Kaspárov en 1996. Es una Inteligencia Artificial? ![450_1000](	figures/450_1000.jpg)
+  * Deep y deeper Blue que derrotaron al ajedrecista Gary Kaspárov en 1996. Es una Inteligencia Artificial?
+  *  ![450_1000](	figures/450_1000.jpg)
 
 https://www.professional-ai.com/deep-blue-algorithm.html
 
@@ -325,7 +338,7 @@ Que significa, calcular la clase $k$ que que maximiza la función de probabilida
 
 Ejemplo:
 
-![Screen Shot 2021-02-23 at 20.41.29](figures/Screen Shot 2021-02-23 at 20.41.29.png)
+![Screen Shot 2021-02-23 at 20.41.29](figures/Screen Shot 2021-02-23 at 20.41.29.png)![logaritmos-propiedades](figures/logaritmos-propiedades.png)
 
 ### Descubriendo variables (o factores latentes)
 
@@ -773,7 +786,7 @@ Para construir un hiperplano se requiere otro punto $P$ que forma parte del hipe
 
 $\overrightarrow {P_0P} = [(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] $
 
-$(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0) \cdot (w_1,w_2,w_3) = 0 $
+$[(x_1-x^0_1),(x_2-x_2^0),(x_3-x_3^0)] \cdot (w_1,w_2,w_3) = 0 $
 
 agrupando términos
 
@@ -1084,7 +1097,7 @@ Viernes 12 de Marzo
 
 
 
-
+asdfasdfasdfasdf
 
 
 
