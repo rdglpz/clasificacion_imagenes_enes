@@ -5,12 +5,9 @@ Actualización 23 marzo 2021
 Orden de los temas
 
 1. Cálculo de parámetros estadísticos (24 Marzo)
-
 2. Clasificación (24, 26 Marzo)
-
-3. Análisis de las muestras (31 Marzo)
-
-4. Selección de *áreas* de entrenamiento (31 Marzo)
+3. Selección de *áreas* de entrenamiento (26 Marzo)
+4. Análisis de las muestras (7 Marzo)
 
 ### Cálculo de parámetros estadísticos
 
@@ -70,7 +67,7 @@ Como las variables a clasificar son binarias, la salida de la función logístic
 
 
 
-Entonces utilizando la función de probabilidad de Bernoulli podemos evaluar en una sola expresión la probabilidad de que un dato pertenezca a una clase indistintamente de su etiqueta. 
+Entonces utilizando la función de probabilidad de Bernoulli podemos evaluar en una sola expresión **la probabilidad de que un dato $\mathbf{x}_i$ este correctamente bien clasificado en la clase $y_i$,** ( de otro modo, la probabilidad de que un dato pertenezca a una clase $y_i$ indistintamente de su etiqueta.)
 
 $P(Y=y_i|\mathbf{X}=\mathbf{x}_i) = sigm(\mathbf{w}^T\mathbf{x}_i +w_0)^y \cdot [1-sigm(\mathbf{w}^T\mathbf{x}_i +w_0)]^{(1-y)}$
 
@@ -153,6 +150,8 @@ $\frac{\partial LL(\theta)}{\partial \theta_j} = \sum_{i=1}^n [y_i-sigm(\theta^T
 
 La estructura básica de proceso de optimización es:
 
+$\theta_{t+1} = \theta_{t} + incremento$
+
 $\theta_{t+1} = \theta_{t} + \text{(tamaño de paso) }* \text{dirección}*pendiente$
 
 
@@ -171,15 +170,13 @@ $\theta_{j,t+1} = \theta_{j,t}+n \cdot \frac{\partial LL (\theta_t)}{\partial \t
 
 
 
-
-
 Algoritmo en pseudo código
 
 
 
 * Inicializar parámetros $\{\theta_j=0\}_{j=1}^m $
 
-* Repetir varias veces hasta cumplir un criterio de parada
+* Repetir varias veces hasta cumplir un criterio de parada (núm max. de iteraciones (e.g., 100 iteraciones)).
 
   * Inicializar gradiente $\{grad_j=0\}_{j=1}^m $
 
@@ -192,11 +189,20 @@ Algoritmo en pseudo código
 
     
 
-en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $x_0=1$ para obtener $sigm(\theta^T\mathbf{x}_i + x_0w_0)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+\theta_0)} }$
+en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $bias=1$ para obtener $sigm(\theta^T\mathbf{x}_i + bias*w_0)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+\theta_0)} }$
 
 
 
+**Tarea 5. Clasificación de imágenes con regresión logística**
 
+
+
+1. Definir un problema de clasificación binaria de pixeles en una imagen.
+2. Definir que se quiere clasificar. (arboles, carretera, techos de edificios....)
+3. Seleccionar muestras para clase 1 y clase 2 de una imagen donde aproximadamente las 2 clases tengan las los mismos vectores de entrada. 
+   1. Si las dos clases tienen diferente número de elementos hacer (e.g., |C_2 > |C_1||):
+      1. $C_1 \text{: }|-----|-----|$
+      2. $C_2:|-----|-----|--(descartar)--|$
 
 
 
