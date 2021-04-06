@@ -1,4 +1,4 @@
-## Unidad 4 Clasificación Supervisada
+Unidad 4 Clasificación Supervisada
 
 Actualización 23 marzo 2021
 
@@ -7,7 +7,7 @@ Orden de los temas
 1. Cálculo de parámetros estadísticos (24 Marzo)
 2. Clasificación (24, 26 Marzo)
 3. Selección de *áreas* de entrenamiento (26 Marzo)
-4. Análisis de las muestras (7 Marzo)
+4. Análisis de las muestras (7 Abril)
 
 ### Cálculo de parámetros estadísticos
 
@@ -192,21 +192,39 @@ Algoritmo en pseudo código
 en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $bias=1$ para obtener $sigm(\theta^T\mathbf{x}_i + bias*w_0)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+\theta_0)} }$
 
 
+### 4.1 Selección de áreas de entrenamiento. 
 
-**Tarea 5. Clasificación de imágenes con regresión logística**
 
 
+
+
+### 4.4 Clasificación y 4.1 Selección de *áreas* de entrenamiento (7 abril)
+
+**Tarea. Clasificación de imágenes con regresión logística**
 
 1. Definir un problema de clasificación binaria de pixeles en una imagen.
 2. Definir que se quiere clasificar. (arboles, carretera, techos de edificios....)
 3. Seleccionar muestras para clase 1 y clase 2 de una imagen donde aproximadamente las 2 clases tengan las los mismos vectores de entrada. 
-   1. Si las dos clases tienen diferente número de elementos hacer (e.g., |C_2 > |C_1||):
+   1. Si las dos clases tienen diferente número de elementos hacer (e.g., $|C_2| > |C_1|$|):
       1. $C_1 \text{: }|-----|-----|$
-      2. $C_2:|-----|-----|--(descartar)--|$
+      2. $C_2\text{: }|-----|-----|--(descartar)--|$
+
+### 4.3 Análisis de las muestras (7 Abril)
 
 
 
-## Bibliografía
+## Unidad 5 Adjudicación de pixeles a clases. Técnicas no estadísticas 
+
+### 5.1 Árboles de clasificación. 
+
+https://grass.osgeo.org/grass78/manuals/addons/r.learn.ml.html
+
+### 5.2 Clasificación por mínima distancia (el mas sencillo de todos).
+### 5.3 Clasificación por paralelepípedos. 
+
+
+
+### Bibliografía
 
 
 
