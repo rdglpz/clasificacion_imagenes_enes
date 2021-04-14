@@ -4,8 +4,11 @@ Spyder Editor
 
 """
 
+'''
+Referencias:
 
-#Código adaptado de: https://www.life2coding.com/crop-image-using-mouse-click-movement-python/
+https://www.life2coding.com/crop-image-using-mouse-click-movement-python/
+'''
 
 import cv2
 
