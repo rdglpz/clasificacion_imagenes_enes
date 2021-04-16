@@ -17,7 +17,9 @@ import cv2
 
 cropping = False
 x_start, y_start, x_end, y_end = 0, 0, 0, 0
+
 image = cv2.imread('mapa.png')
+
 oriImage = image.copy()
 global n
 n = 0
@@ -44,7 +46,7 @@ def mouse_crop(event, x, y, flags, param):
             roi = oriImage[refPoint[0][1]:refPoint[1][1], refPoint[0][0]:refPoint[1][0]]
             cv2.imshow("Cropped", roi)
 #            image = PIL.Image.fromarray(roi, "RGB")
-            cv2.imwrite("out"+str(n)+".jpg", roi)
+            cv2.imwrite("out_2"+str(n)+".jpg", roi)
             n +=1
 
             
@@ -76,3 +78,6 @@ while f:
     
 # close all open windows
 cv2.destroyAllWindows()
+
+
+p3GL7a1g

@@ -189,44 +189,35 @@ Algoritmo en pseudo código
 
     
 
-en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una característica especial $bias=1$ para obtener $sigm(\theta^T\mathbf{x}_i + bias*w_0)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+\theta_0)} }$
-
-
-### 4.1 Selección de áreas de entrenamiento. 
+en el caso de considerar $sigm(\theta^T\mathbf{x}_i + \theta_0)$, en vez de utilizar la derivada explicita se define una derivada especial $bias=1$ para obtener $sigm(\theta^T\mathbf{x}_i + bias*w_0)= \frac{1}{1+exp{-(\theta^T\mathbf{x}_i+\theta_0)} }$
 
 
 
 
 
-### 4.4 Clasificación y 4.1 Selección de *áreas* de entrenamiento (7 abril)
+### 4.1 Selección de *áreas* de entrenamiento. 
 
-**Tarea. Clasificación de imágenes con regresión logística**
+(Ejemplo seleccionador de muestras en python y recomendaciones)
 
-1. Definir un problema de clasificación binaria de pixeles en una imagen.
-2. Definir que se quiere clasificar. (arboles, carretera, techos de edificios....)
-3. Seleccionar muestras para clase 1 y clase 2 de una imagen donde aproximadamente las 2 clases tengan las los mismos vectores de entrada. 
-   1. Si las dos clases tienen diferente número de elementos hacer (e.g., $|C_2| > |C_1|$|):
-      1. $C_1 \text{: }|-----|-----|$
-      2. $C_2\text{: }|-----|-----|--(descartar)--|$
+Ubicado en el repositorio de GitHub.
 
-### 4.3 Análisis de las muestras (7 Abril)
+```/clasificacion_imagenes_enes/python_notebooks/seleccionarClases.py```
 
 
 
-## Unidad 5 Adjudicación de pixeles a clases. Técnicas no estadísticas 
+### 4.3 Análisis de las muestras.
 
-### 5.1 Árboles de clasificación. 
+Una manera de analizar las muestras utilizando una herramienta visual  para muestras en bajas dimensiones.
 
-https://grass.osgeo.org/grass78/manuals/addons/r.learn.ml.html
+Libreta de jupyter en github con la ruta:
 
-### 5.2 Clasificación por mínima distancia (el mas sencillo de todos).
-### 5.3 Clasificación por paralelepípedos. 
+```/clasificacion_imagenes_enes/python_notebooks/Seleccion_entrenamiento.ipynb```
 
+### 4.4 Clasificación.
 
+Aplicar lo aprendido.
 
 ### Bibliografía
-
-
 
 
 
