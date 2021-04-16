@@ -1,6 +1,6 @@
 **Tarea 6:  Clasificación de pixeles de imágenes con regresión logística.** (Parte práctica del éxamen). 
 
-Examen 60%, ((teoría + práctica) = (36% + 24%) = 60%). **Propuesta de entrega: 23 de Abril.**
+Examen 60%, ((teoría + práctica) = (35% + 25%) = 60%). **Propuesta de entrega: 23 de Abril.**
 
 1. (10%) Definir un problema de clasificación binaria de pixeles en una imagen (¿Qué se quiere clasificar? árboles, carretera, techos de edificios....). 
 
