@@ -53,7 +53,54 @@ Encontrar el particionamiento óptimo es NP-completo (Hyafil y Rivest 1976), por
 
 El objetivo es encontrar una función de división que escoja la mejor característica y el mejor umbral como describe la ecuación:
 
-$(j*,t*) = \text{arg } \underset {j\in \{1,\dots,D \} }{min} \underset{t\in T_j}{\text{ min}} \text{ cost }(\mathbf{x}_i,y_i:x_{ij}\leq t) + \text{ cost }(\mathbf{x}_i,y_i:x_{ij}> t) $
+$(j*,t*) = \text{arg } \underset {j\in \{1,\dots,D \} }{min} \underset{t\in T_j}{\text{ min}} \text{ cost }(\mathbf{x}_i,y_i:x_{ij}\le t) + \text{ cost }(\mathbf{x}_i,y_i:x_{ij}> t) $
+
+
+
+```
+X
+
+i   X     Y={1,0}
+0 (1,0) - 1
+1 (1,1) - 1
+2 (0,0) - 0
+3 (0,1) - 0
+
+------
+
+Para:
+t = {0,1}
+j = 2
+t = 0
+
+Partición (División) 0
+0 (1,0) - |1-0|
+2 (0,0) - |0-0|
+
+Particion (División) 1
+------------
+1 (1,1) - 1 |1-1|
+3 (0,1) - 0 |0-1| 
+
+Costo: 2 equivocaciones
+
+Para: 
+t = {0,1}
+j = 1
+t = 0
+
+Particion (División) 0 
+2 (0,0) - 0 |0-0|=0
+3 (0,1) - 0 |0-0|=0
+
+Partición (División)  1
+0 (1,0) - 1 |1-1|=0
+1 (1,1) - 1 |1-1|=0
+
+Costo: 
+0 equivocaciones
+
+```
 
 
 
@@ -77,14 +124,13 @@ Si el árbol crece demasiado, o dejamos que tenga mucha granularidad (cada hoja 
 
 Por lo tanto existen mecanismos para regular este hecho.
 
-
-
 1. El árbol excede un número máximo de profundidad.
 2. La distribucion de la respuesta en $D_L$ o $D_R$ es suficientemente homogéneo o es puro.
 3. El número de datos es pequeño en las hojas.
 4. Poca ganancia en el costo:	
 
-1. $\Delta = cost(D)-(\frac{D_L}{D}cost(D_L) + \frac{|D_R|}{|D|}cost(D_R))$
+   $\Delta = cost(D)-(\frac{D_L}{D}cost(D_L) + \frac{|D_R|}{|D|}cost(D_R))$
+
 
 
 
@@ -130,3 +176,12 @@ https://grass.osgeo.org/grass78/manuals/addons/r.learn.ml.
 ### 5.2 Clasificación por mínima distancia (el mas sencillo de todos).
 
 ### 5.3 Clasificación por paralelepípedos. 
+
+
+
+
+
+**Bibliografía**
+
+https://www.datacamp.com/community/tutorials/decision-tree-classification-python?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=278443377095&utm_targetid=aud-522010995285:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1010110&gclid=Cj0KCQjwgtWDBhDZARIsADEKwgOSos4fIo0X7qJJKDN_AymZ-Zzx39SMb_ctOH_54Un-mQqsQN1pMVQaAmz-EALw_wcB
+

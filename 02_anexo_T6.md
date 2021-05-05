@@ -4,7 +4,7 @@ Examen 60%, ((teoría + práctica) = (35% + 25%) = 60%). **Propuesta de entrega:
 
 1. (10%) Definir un problema de clasificación binaria de pixeles en una imagen (¿Qué se quiere clasificar? árboles, carretera, techos de edificios....). 
 
-2. (10%) Explorar visualmente las muestras con una gráfica de dispersión (*scatter plot*) para evaluar la separabilidad de las clases. (Scatter plot acompañada de una conclusión o comentario sobre los datos observados) 
+2. (10%) Explorar visualmente las muestras con una gráfica de dispersión (*scatter plot*) para evaluar la separabilidad de las clases. (Scatter plot acompañada de una conclusión o comentario sobre los datos observados).
 
 3. (10%) Seleccionar muestras de las dos clases de una imagen donde aproximadamente cada una de ellas tengan las los mismos elementos o vectores de entrada para evitar clases desbalanceadas. (Indicar Explícitamente la parte del código que realiza esta tarea).
 
@@ -25,7 +25,7 @@ Examen 60%, ((teoría + práctica) = (35% + 25%) = 60%). **Propuesta de entrega:
 
     https://es.m.wikipedia.org/wiki/Archivo:Matriz_confusion.png. 
 
-6. (20%) Generar una imagen binaria como resultado de clasificar el resto de los pixeles con el modelo entrenado. (Reportar Imagen)
+6. (20%) Generar una imagen binaria como resultado de clasificar el resto de los pixeles con el modelo entrenado. (Reportar Imagen).
 
 Entregar el trabajo en Libreta de Jupyter. Describir detalladamente el procedimiento.
 
