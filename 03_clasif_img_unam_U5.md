@@ -14,7 +14,7 @@ De manera general un arbol de clasificación trabaja haciendo divisiones paralel
 
 
 
-Este espacio puede asociarse a la respuesta promedio de cada una de esas regiones dando como resultado una superficie constante por partes (piecewise constant surface). 
+Este espacio puede asociarse a la respuesta promedio de cada una de esas regiones dando como resultado el valor de asociado a una superficie constante por partes (piecewise constant surface). 
 
 $f(\mathbf{x})=E[y|\mathbf{x}]=\sum_{m=1}^M w_m I(\mathbf{x}\in R_m)=\sum_{m=1}^Mw_m \phi(\mathbf{x};\mathbf{v}_m))$
 
@@ -49,9 +49,9 @@ En vez de calcular el valor de la respuesta promedio, guardamos la distribución
 
 **Construyendo el árbol de clasificación:**
 
-Encontrar el particionamiento óptimo es NP-completo (Hyafil y Rivest 1976), por lo tanto es común utilizar un procedimiento glotón (greedy).
+Encontrar el particionamiento óptimo es NP-completo (Hyafil y Rivest 1976), por lo tanto es común utilizar un procedimiento glotón (greedy) el cual nos ofrece una buena solución.
 
-El objetivo es encontrar una función de división que escoja la mejor característica y el mejor umbral como describe la ecuación:
+El objetivo es encontrar una función de división que seleccione la mejor característica y el mejor umbral tal como describe la ecuación:
 
 $(j*,t*) = \text{arg } \underset {j\in \{1,\dots,D \} }{min} \underset{t\in T_j}{\text{ min}} \text{ cost }(\mathbf{x}_i,y_i:x_{ij}\le t) + \text{ cost }(\mathbf{x}_i,y_i:x_{ij}> t) $
 
@@ -140,17 +140,19 @@ Costo de la clasificación:
 
 Existen varios manera de medir la calidad de la división. Estas estan basadas en un modelo Bernoulli multinomial, que expresa la probabilidad condicionada a la clase de datos que satisfacen $X_j<t$. 
 
-$\hat{\pi}_c = \frac{1}{|D|}\sum_{i\in D} I (y_i=c)$
+$\hat{\pi}_c = \frac{1}{|N|}\sum_{i\in N} I (y_i=c)$
 
 D: es el conjunto de datos (dataset) en la hoja. 
 
 $y_i=c$, es el elemento $y_i$ satiface la desigualdad $X_j<t$ y la sumatoria es al proporción de datos clasificados en $c$ dado un (sub) conjunto de datos $D$.
 
-Una funcón de costo utilizada para evaluar divisiones en el conjunto de datos es el **índice Gini**
+Una función de costo utilizada para evaluar divisiones en el conjunto de datos es el **índice Gini**
 
 
 
 $\sum_{c=1}^C \hat{\pi}_c(1-\hat{\pi}_c) = 1 - \sum_{c}\hat{\pi}^2_c$
+
+
 
 
 

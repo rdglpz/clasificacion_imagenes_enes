@@ -2,7 +2,7 @@
 
 Dr. Rodrigo López Farías
 
-## Unidad 1. Introducción a las técnicas de Clasificación
+## Introducción a las técnicas de Clasificación
 
 1.0 Introducción al  aprendizaje automático.
 
@@ -32,11 +32,11 @@ Ejemplos de problemas que son fáciles para los humanos pero difíciles para las
 * Clasificación de Imágenes.
 * Reconocimiento de objetos.
 * Qué otros problemas los humanos pueden resolver fácilmente? 
-  * La Justicia
+  * La Justicia? 
 
 
 
-Hay otros problemas que van mas allá de tema pero vale la pena mencionar que son aquellos problemas de decisión difíciles para las computadoras y para los humanos. El problema es si los humanos queremos delegar a una computadora la toma de decisiones éticas.  
+Hay otros problemas que llevan al límite la subjetividad y son  problemas de decisión difíciles para las computadoras y para los humanos. El pregunta es si los humanos queremos delegar a una computadora la toma de decisiones éticas.  
 
 * Decisiones éticas. 
 
@@ -1082,7 +1082,6 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrog
 ## Examen Unidad 1,2 y 3
 
 Viernes 12 de Mazo
-
 
 
 

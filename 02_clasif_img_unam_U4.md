@@ -152,7 +152,7 @@ La estructura básica de proceso de optimización es:
 
 $\theta_{t+1} = \theta_{t} + incremento$
 
-$\theta_{t+1} = \theta_{t} + \text{(tamaño de paso) }* \text{dirección}*pendiente$
+$\theta_{t+1} = \theta_{t} + \text{(tamaño de paso) }* \text{dirección}*pendiente $
 
 
 
@@ -226,3 +226,6 @@ https://www.um.es/geograf/sigmur/temariohtml/node74_mn.html
 https://turing.iimas.unam.mx/~ivanvladimir/posts/gradient_descent/
 
 https://turing.iimas.unam.mx/~ivanvladimir/posts/gradient_descent/
+
+
+
