@@ -3,7 +3,10 @@
 Dado un conjunto de datos de entrenamiento y prueba:
 
 1. Entrenar y probar un árbol de clasificación binario con el código visto en clase, las funciones build_tree y predict y los datos de entrenamiento y prueba de las imágenes de la tarea anterior.
-2.  Mostrar el desempeño del clasificador utilizando una medida de error de clasificación de libre selección. Puede ser por ejemplo precisión del clasificador.  
+
+2.  Mostrar el desempeño del clasificador utilizando una medida de error de clasificación de libre selección. Puede ser por ejemplo precisión del clasificador.
+
+   Entregar la tarea en un notebook  de python con los archivos requeridos si es el caso.
 
 
 
