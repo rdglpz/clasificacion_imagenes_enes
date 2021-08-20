@@ -211,4 +211,4 @@ $\frac{\partial E}{\partial w_i} =  -  \sum_{i}^n x_i \hat{z}_i(1-\hat{z}_i) (z_
 
 
 
-
+![draft_regla_cadena_ann](figures/draft_regla_cadena_ann.png)
