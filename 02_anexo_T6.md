@@ -115,3 +115,5 @@ $TVP = \frac{VP}{VP+FN}$
 $TVN=\frac{VN}{VN+FP}$
 
 Precisión y sensibilidad indican que tan relevante son los resultados.
+
+\* Mostrar el desempeño del clasificador utilizando una medida de error de clasificación de libre selección. Puede ser por ejemplo la precisión.
