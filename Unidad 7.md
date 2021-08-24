@@ -163,7 +163,7 @@ El algoritmo propagación hacia atrás utiliza el principio de la regla de la ca
 
 La neurona simple tiene la siguiente forma (igual que la regresión lineal)
 
-<img src="/Users/rodrigo/Downloads/mtheme_cgeo/figures/simple_classifier_structure.png" alt="simple_classifier_structure" style="zoom:50%;" />
+<img src="figures/simple_classifier_structure.png" alt="simple_classifier_structure" style="zoom:50%;" />
 
 
 
