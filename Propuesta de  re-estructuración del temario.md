@@ -11,7 +11,7 @@ Sin embargo propongo dar prioridad a los siguientes temas
 5. Adjudicación de pixeles a clases. Técnicas no estadísticas
    1. Árboles de clasificación. (Viernes 13 Agosto)
 6. Se omite.
-7. Clasificacion de imágenes. Técnicas avanzadas. Se omiten los temas excepto.
+7. Clasificación de imágenes. Técnicas avanzadas. Se omiten los temas excepto.
    1. Clasificación de contexto (Miércoles 18 Agosto)
    2. Clasificación por redes neuronales ( Viernes 20 Agosto) * 
 8. Clasificación orientada a objetos. Ver todo este tema
