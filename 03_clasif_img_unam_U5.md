@@ -142,13 +142,15 @@ Existen varios manera de medir la calidad de la división. Estas estan basadas e
 
 $\hat{\pi}_c = \frac{1}{|N|}\sum_{i\in N} I (y_i=c)$
 
-D: es el conjunto de datos (dataset) en la hoja. 
+$I(y_i=c) = 1$ si $y_i$ pertenece a la clase $c$
 
-$y_i=c$, es el elemento $y_i$ satiface la desigualdad $X_j<t$ y la sumatoria es al proporción de datos clasificados en $c$ dado un (sub) conjunto de datos $D$.
+N: es el conjunto de datos (dataset) en la hoja. 
+
+$y_i$, es el elemento que satiface la desigualdad $X_j<t$ y la sumatoria es multiplicada por la proporción de datos clasificados en $c$ dado un (sub) conjunto de datos $N$.
 
 Una función de costo utilizada para evaluar divisiones en el conjunto de datos es el **índice Gini**
 
-
+$\hat{\pi}_c = \frac{1}{|N|}\sum_{i\in N} I (y_i=c)$
 
 $\sum_{c=1}^C \hat{\pi}_c(1-\hat{\pi}_c) = 1 - \sum_{c}\hat{\pi}^2_c$
 
