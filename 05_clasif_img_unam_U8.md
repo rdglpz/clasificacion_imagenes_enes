@@ -58,54 +58,6 @@ Soluciones.
 
 * **REDES NEURONALES**
 
-## 8.2 Fundamentos y aplicaciones. Metodología para la extracción de información
-
-Antecedentes:
-
-* Continuo incremento de la resolución de las imágenes satelitales.
-* Demanda por automatizar su análisis.
-* El reto es producir metodologías computacionales que ayuden a mejorar la interpretación de  un experto.
-* Los metodos basados en objetos mejoran la clasificación basada en pixeles.
-* Los objetos de imágenes pueden contener mas atributos que solo la información espectral.
-* El procesamiento basado en objetos no solo considera la información contextual, si no la forma y las relaciones espaciales entre regiones en la imagen.
-
-
-
-Un nuevo requirimiento en muchas aplicaciones de imágenes es la necesidad de crear mosaicos que representen una región definida por características similares. Estos pueden ser por ejemplo, características ecológicas, sociales, fisiográficas. 
-
-La integración de datos adicionales se ha estudiado como una orientación de fusión de datos de multiples recursos y modelos de clasificación contextual para obtener una mejor precisión comparando con los enfoques basados en pixeles.
-
-* human photo-interpreters also implicitly use structural knowledge in the manual classification process. This type of process has hardly been utilized in previous research.
-
-* Diferentes enfoques en clasificacion de contexto han sido propuestos.
-
-
-
-Metodologías existentes 
-
-* Clasificación por pixel (*tradicional*).
-
-  * Desventajas. No utiliza información espacial o contextual.
-
-* Segmentación de imágenes.
-
-  * Necesita información sobre la escala.
-  * Ejemplo de esto son algoritmos de crecimiento de regiones.
-  * Hay dos maneras de hacer segmentación 1) de manera manual por un experto 2) segmentación automática.
-
-* Información de contexto y textura.
-* * Descomponer una imagen y analizar la relación de sus elementos mas simples es una manera de incorporar información de contexto.
-* Una de las primeras utilidades de utilizar el contexto, es para usar la información de las texturas en la clasificación.
-*  
-
-
-
-* Object-based image analysis compared with concept with traditional pixel-based image analysis.
-
-PEr pixel methods:
-
-
-
 
 
 
