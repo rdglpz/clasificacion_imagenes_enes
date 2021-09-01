@@ -1,4 +1,4 @@
-# Unidad 7 Clasificación de Imágenes. Técnicas Avanzadas.
+# Unidad 8 .
 
 ## Clasificación por redes neuronales
 
@@ -259,11 +259,11 @@ Este método es muy ineficiente por la cantidad de operaciones que se incrementa
 
 Soluciones.
 
+* Probabilidades condicionales. 
+
 * Usando una versión bidimensional de cadenas de Markov llamado Mallas de Markov
 
 * ![Image87](http://www.bic.mni.mcgill.ca/~mallar/CS-644B/Image87.gif)
-
-* Probabilidades marginales.
 
 * **REDES NEURONALES**
 
